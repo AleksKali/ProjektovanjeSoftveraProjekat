@@ -1,0 +1,9 @@
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\bin\Debug\DBBroker.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\bin\Debug\DBBroker.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\bin\Debug\Domen.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\bin\Debug\Domen.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\obj\Debug\DBBroker.csproj.AssemblyReference.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\obj\Debug\DBBroker.csproj.CoreCompileInputs.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\obj\Debug\DBBroker.csproj.CopyComplete
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\obj\Debug\DBBroker.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\DBBroker\obj\Debug\DBBroker.pdb

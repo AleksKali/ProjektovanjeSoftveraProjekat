@@ -1,0 +1,13 @@
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\AplikacionaLogika.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\AplikacionaLogika.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\DBBroker.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\Domen.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\DBBroker.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\Domen.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\obj\Debug\AplikacionaLogika.csproj.AssemblyReference.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\obj\Debug\AplikacionaLogika.csproj.CoreCompileInputs.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\obj\Debug\AplikacionaLogika.csproj.CopyComplete
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\obj\Debug\AplikacionaLogika.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\obj\Debug\AplikacionaLogika.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\Repozitorijum.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\AplikacionaLogika\bin\Debug\Repozitorijum.pdb

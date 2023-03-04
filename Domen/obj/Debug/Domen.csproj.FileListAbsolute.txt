@@ -1,0 +1,6 @@
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Domen\bin\Debug\Domen.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Domen\bin\Debug\Domen.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Domen\obj\Debug\Domen.csproj.AssemblyReference.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Domen\obj\Debug\Domen.csproj.CoreCompileInputs.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Domen\obj\Debug\Domen.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Domen\obj\Debug\Domen.pdb

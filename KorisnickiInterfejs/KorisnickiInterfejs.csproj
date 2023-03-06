@@ -88,18 +88,6 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPretragaClanova.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPretragaClanova.Designer.cs">
-      <DependentUpon>FrmPretragaClanova.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPretragaIgrica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPretragaIgrica.Designer.cs">
-      <DependentUpon>FrmPretragaIgrica.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPretragaZaduzenja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +102,12 @@
     <Compile Include="FrmKreiranjeNovogZaduzenja.Designer.cs">
       <DependentUpon>FrmKreiranjeNovogZaduzenja.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Clanarina\UCEvidentiranjeClanarine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Clanarina\UCEvidentiranjeClanarine.Designer.cs">
+      <DependentUpon>UCEvidentiranjeClanarine.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Clan\UCKreiranjeClana.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +119,12 @@
     </Compile>
     <Compile Include="UserControls\Clan\UCPretragaClanova.Designer.cs">
       <DependentUpon>UCPretragaClanova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Igrice\UCPretragaIgrica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Igrice\UCPretragaIgrica.Designer.cs">
+      <DependentUpon>UCPretragaIgrica.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmDetaljiClana.resx">
       <DependentUpon>FrmDetaljiClana.cs</DependentUpon>
@@ -147,12 +147,6 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPretragaClanova.resx">
-      <DependentUpon>FrmPretragaClanova.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPretragaIgrica.resx">
-      <DependentUpon>FrmPretragaIgrica.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmPretragaZaduzenja.resx">
       <DependentUpon>FrmPretragaZaduzenja.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,11 +162,17 @@
     <EmbeddedResource Include="FrmKreiranjeNovogZaduzenja.resx">
       <DependentUpon>FrmKreiranjeNovogZaduzenja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Clanarina\UCEvidentiranjeClanarine.resx">
+      <DependentUpon>UCEvidentiranjeClanarine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Clan\UCKreiranjeClana.resx">
       <DependentUpon>UCKreiranjeClana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Clan\UCPretragaClanova.resx">
       <DependentUpon>UCPretragaClanova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Igrice\UCPretragaIgrica.resx">
+      <DependentUpon>UCPretragaIgrica.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

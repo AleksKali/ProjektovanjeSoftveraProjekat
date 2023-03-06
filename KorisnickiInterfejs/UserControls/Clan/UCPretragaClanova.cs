@@ -41,7 +41,15 @@ namespace KorisnickiInterfejs.UserControls
             }
             izabranClan = (Clan)dgvClanPretraga.SelectedRows[0].DataBoundItem;
 
-            new FrmDetaljiClana(izabranClan).ShowDialog();
+            FrmDetaljiClana frmDetaljiClana = new FrmDetaljiClana(izabranClan);
+            frmDetaljiClana.ShowDialog();
+            DialogResult result = frmDetaljiClana.DialogResult;
+            frmDetaljiClana.Dispose();
+            if(result== DialogResult.OK)
+            {
+                MessageBox.Show("Uspesno ste izmenili podatke o clanu!");
+            }
+           
             /*tbClanskiBroj.Text = izabranClan.ClanskiBroj.ToString();
             tbDatumUclanjenja.Text
 
@@ -49,15 +57,19 @@ namespace KorisnickiInterfejs.UserControls
             txtDescription.Text = selectedProduct.Description.ToString();
             txtName.Text = selectedProduct.Name.ToString();
             txtPrice.Text = selectedProduct.Price.ToString();*/
+            dgvClanPretraga.Refresh();
         }
+      
 
-        private void btnPronadjiClanove_Click(object sender, EventArgs e)
+        
+
+        private void tbImeClana_TextChanged(object sender, EventArgs e)
         {
-            int clanskiBr = int.Parse(tbClanskiBroj.Text);
+            string ime = tbImeClana.Text;
             try
             {
-                dgvClanPretraga.DataSource = new BindingList<Clan>(Kontroler.Instance.VratiClanove(clanskiBr));
-                
+                dgvClanPretraga.DataSource = new BindingList<Clan>(Kontroler.Instance.VratiClanove(ime));
+
             }
             catch (Exception ex)
             {

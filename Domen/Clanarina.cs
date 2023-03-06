@@ -10,7 +10,7 @@ namespace Domen
     public class Clanarina
     {
         public int ClanarinaID { get; set; }
-        public int ClanId {get; set; } //ne treba nam ceo objekat, jer je ovo slab
+        public Clan Clan {get; set; } 
         public DateTime DatumOd { get; set; }
         public DateTime DatumDo { get; set; }
     }

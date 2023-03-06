@@ -14,8 +14,6 @@ C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\Kor
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.KreiranjeNovogClana.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmLogin.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmMain.resources
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmPretragaClanova.resources
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.PretragaIgrica.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmPretragaZaduzenja.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.Properties.Resources.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmKreiranjeNovogZaduzenja.resources
@@ -29,3 +27,5 @@ C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\bin\Debug\Rep
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.UCKreiranjeClana.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.UCPretragaClanova.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmDetaljiClana.resources
+C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.Igrice.UCPretragaIgrica.resources
+C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.Clanarina.UCEvidentiranjeClanarine.resources

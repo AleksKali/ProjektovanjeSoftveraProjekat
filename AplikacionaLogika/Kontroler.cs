@@ -29,12 +29,17 @@ namespace AplikacionaLogika
                 return instance;
             }
         }
+
+        
         #endregion
 
         public Korisnik Korisnik { get; private set; }
+
         private Broker broker = new Broker();
         private KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
         private ClanRepozitorijum clanRepozitorijum = new ClanRepozitorijum();
+        private IgricaRepozitorijum igricaRepozitorijum = new IgricaRepozitorijum();
+        private ClanarinaRepozitorijum clanarinaRepozitorijum = new ClanarinaRepozitorijum();
 
         public int DodajClana(Clan clan) //fja dodata 4.marta
         {
@@ -63,16 +68,45 @@ namespace AplikacionaLogika
             return clanRepozitorijum.DodajClana(c);
         }
             
-        public List<Clan> VratiClanove(int id)
+        public List<Clan> VratiClanove(string ime)
         {
 
-            List<Clan> clanovi = clanRepozitorijum.VratiClanove(id);
+            List<Clan> clanovi = clanRepozitorijum.VratiClanove(ime);
             return clanovi;
+        }
+
+        public void IzmeniClana(Clan c)
+        {
+            clanRepozitorijum.IzmeniClana(c);
         }
 
         public void ObrisiClana(Clan c)
         {
             clanRepozitorijum.ObrisiClana(c);
         }
+
+        public List<Zaduzenje> VratiZaduzenjaClana(Clan c)
+        {
+            List<Zaduzenje> zaduzenja = clanRepozitorijum.VratiZaduzenjaClana(c);
+            return zaduzenja;
+        }
+        public List<Igrica> VratiIgrice(string ime)
+        {
+            List<Igrica> igrice = igricaRepozitorijum.VratiIgrice(ime);
+            return igrice;
+        }
+        public List<Igrica> VratiIgrice()
+        {
+            List<Igrica> igrice = igricaRepozitorijum.VratiIgrice();
+            return igrice;
+        }
+
+        public List<Clanarina> VratiClanarine()
+        {
+            List<Clanarina> clanarine = clanarinaRepozitorijum.VratiClanarine();
+
+            return clanarine;
+        }
+
     }
 }

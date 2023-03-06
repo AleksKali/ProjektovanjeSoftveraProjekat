@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClanarinaRepozitorijum.cs" />
     <Compile Include="ClanRepozitorijum.cs" />
+    <Compile Include="IgricaRepozitorijum.cs" />
     <Compile Include="KorisnikRepozitorijum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

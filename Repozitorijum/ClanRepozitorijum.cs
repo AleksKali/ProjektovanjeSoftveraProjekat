@@ -17,7 +17,7 @@ namespace Repozitorijum
             try
             {
                 broker.OpenConnection();
-                return broker.IzmeniClana(c);
+                return broker.DodajClana(c);
             }
 
             catch (Exception ex)
@@ -31,12 +31,12 @@ namespace Repozitorijum
             }
         }
 
-        public int IzmeniClana(Clan c)
+        public void IzmeniClana(Clan c)
         {
             try
             {
                 broker.OpenConnection();
-                return broker.IzmeniClana(c);
+                broker.IzmeniClana(c);
             }
 
             catch (Exception ex)
@@ -67,12 +67,31 @@ namespace Repozitorijum
                 broker.CloseConnection();
             }
         }
-        public List<Clan> VratiClanove(int id)
+        public List<Clan> VratiClanove(string ime)
         {
             try
             {
                 broker.OpenConnection();
-                return broker.VratiClanove(id);
+                return broker.VratiClanove(ime);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
+
+        public List<Zaduzenje> VratiZaduzenjaClana(Clan c)
+        {
+            try
+            {
+                broker.OpenConnection();
+                return broker.VratiZaduzenjaClana(c);
             }
 
             catch (Exception ex)

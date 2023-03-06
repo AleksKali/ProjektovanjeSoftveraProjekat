@@ -33,7 +33,6 @@ namespace KorisnickiInterfejs
             this.liToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unosNovogČlanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretragaČlanovaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.krajRadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaduženjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretragaZaduženjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kreiranjeNovogZaduženjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +46,6 @@ namespace KorisnickiInterfejs
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.liToolStripMenuItem,
-            this.krajRadaToolStripMenuItem,
             this.zaduženjaToolStripMenuItem,
             this.članarineToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -79,12 +77,6 @@ namespace KorisnickiInterfejs
             this.pretragaČlanovaToolStripMenuItem.Text = "Pretraga članova";
             this.pretragaČlanovaToolStripMenuItem.Click += new System.EventHandler(this.pretragaČlanovaToolStripMenuItem_Click);
             // 
-            // krajRadaToolStripMenuItem
-            // 
-            this.krajRadaToolStripMenuItem.Name = "krajRadaToolStripMenuItem";
-            this.krajRadaToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
-            this.krajRadaToolStripMenuItem.Text = "Pretraga igrica";
-            // 
             // zaduženjaToolStripMenuItem
             // 
             this.zaduženjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,6 +103,7 @@ namespace KorisnickiInterfejs
             this.članarineToolStripMenuItem.Name = "članarineToolStripMenuItem";
             this.članarineToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.članarineToolStripMenuItem.Text = "Članarine";
+            this.članarineToolStripMenuItem.Click += new System.EventHandler(this.članarineToolStripMenuItem_Click);
             // 
             // pnlMain
             // 
@@ -123,7 +116,7 @@ namespace KorisnickiInterfejs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 740);
+            this.ClientSize = new System.Drawing.Size(1018, 460);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FrmMain";
@@ -140,7 +133,6 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.ToolStripMenuItem liToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unosNovogČlanaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pretragaČlanovaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem krajRadaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zaduženjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pretragaZaduženjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kreiranjeNovogZaduženjaToolStripMenuItem;

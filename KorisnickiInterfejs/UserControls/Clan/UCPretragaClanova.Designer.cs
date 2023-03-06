@@ -31,10 +31,9 @@ namespace KorisnickiInterfejs.UserControls
         {
             this.btnObrisiClana = new System.Windows.Forms.Button();
             this.btnDetalji = new System.Windows.Forms.Button();
-            this.btnPronadjiClanove = new System.Windows.Forms.Button();
             this.dgvClanPretraga = new System.Windows.Forms.DataGridView();
-            this.tbClanskiBroj = new System.Windows.Forms.TextBox();
-            this.lblClanskiBroj = new System.Windows.Forms.Label();
+            this.tbImeClana = new System.Windows.Forms.TextBox();
+            this.lblimeClana = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanPretraga)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,17 +59,6 @@ namespace KorisnickiInterfejs.UserControls
             this.btnDetalji.UseVisualStyleBackColor = true;
             this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
-            // btnPronadjiClanove
-            // 
-            this.btnPronadjiClanove.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPronadjiClanove.Location = new System.Drawing.Point(499, 25);
-            this.btnPronadjiClanove.Name = "btnPronadjiClanove";
-            this.btnPronadjiClanove.Size = new System.Drawing.Size(146, 29);
-            this.btnPronadjiClanove.TabIndex = 12;
-            this.btnPronadjiClanove.Text = "Pronađi članove";
-            this.btnPronadjiClanove.UseVisualStyleBackColor = true;
-            this.btnPronadjiClanove.Click += new System.EventHandler(this.btnPronadjiClanove_Click);
-            // 
             // dgvClanPretraga
             // 
             this.dgvClanPretraga.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -82,23 +70,24 @@ namespace KorisnickiInterfejs.UserControls
             this.dgvClanPretraga.Size = new System.Drawing.Size(749, 520);
             this.dgvClanPretraga.TabIndex = 11;
             // 
-            // tbClanskiBroj
+            // tbImeClana
             // 
-            this.tbClanskiBroj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbClanskiBroj.Location = new System.Drawing.Point(220, 28);
-            this.tbClanskiBroj.Name = "tbClanskiBroj";
-            this.tbClanskiBroj.Size = new System.Drawing.Size(204, 22);
-            this.tbClanskiBroj.TabIndex = 10;
+            this.tbImeClana.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbImeClana.Location = new System.Drawing.Point(158, 57);
+            this.tbImeClana.Name = "tbImeClana";
+            this.tbImeClana.Size = new System.Drawing.Size(204, 22);
+            this.tbImeClana.TabIndex = 10;
+            this.tbImeClana.TextChanged += new System.EventHandler(this.tbImeClana_TextChanged);
             // 
-            // lblClanskiBroj
+            // lblimeClana
             // 
-            this.lblClanskiBroj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblClanskiBroj.AutoSize = true;
-            this.lblClanskiBroj.Location = new System.Drawing.Point(31, 28);
-            this.lblClanskiBroj.Name = "lblClanskiBroj";
-            this.lblClanskiBroj.Size = new System.Drawing.Size(135, 17);
-            this.lblClanskiBroj.TabIndex = 9;
-            this.lblClanskiBroj.Text = "Unesite članski broj:";
+            this.lblimeClana.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblimeClana.AutoSize = true;
+            this.lblimeClana.Location = new System.Drawing.Point(28, 57);
+            this.lblimeClana.Name = "lblimeClana";
+            this.lblimeClana.Size = new System.Drawing.Size(124, 17);
+            this.lblimeClana.TabIndex = 9;
+            this.lblimeClana.Text = "Unesite ime člana:";
             // 
             // UCPretragaClanova
             // 
@@ -106,10 +95,9 @@ namespace KorisnickiInterfejs.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnObrisiClana);
             this.Controls.Add(this.btnDetalji);
-            this.Controls.Add(this.btnPronadjiClanove);
             this.Controls.Add(this.dgvClanPretraga);
-            this.Controls.Add(this.tbClanskiBroj);
-            this.Controls.Add(this.lblClanskiBroj);
+            this.Controls.Add(this.tbImeClana);
+            this.Controls.Add(this.lblimeClana);
             this.Name = "UCPretragaClanova";
             this.Size = new System.Drawing.Size(951, 636);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanPretraga)).EndInit();
@@ -122,9 +110,8 @@ namespace KorisnickiInterfejs.UserControls
 
         private System.Windows.Forms.Button btnObrisiClana;
         private System.Windows.Forms.Button btnDetalji;
-        private System.Windows.Forms.Button btnPronadjiClanove;
         private System.Windows.Forms.DataGridView dgvClanPretraga;
-        private System.Windows.Forms.TextBox tbClanskiBroj;
-        private System.Windows.Forms.Label lblClanskiBroj;
+        private System.Windows.Forms.TextBox tbImeClana;
+        private System.Windows.Forms.Label lblimeClana;
     }
 }

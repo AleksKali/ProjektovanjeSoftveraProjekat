@@ -1,4 +1,6 @@
 ﻿using KorisnickiInterfejs.UserControls;
+using KorisnickiInterfejs.UserControls.Clanarina;
+using KorisnickiInterfejs.UserControls.Igrice;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +18,10 @@ namespace KorisnickiInterfejs
         public FrmMain()
         {
             InitializeComponent();
+            UCPretragaIgrica ucPretragaIgrica = new UCPretragaIgrica();
+            pnlMain.Controls.Add(ucPretragaIgrica);
+            ucPretragaIgrica.Dock = DockStyle.Fill;
         }
-
-        private void unosNovogČlanaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangePanel(new UCKreiranjeClana());
-        }
-
         private void ChangePanel(UserControl userControl)
         {
             pnlMain.Controls.Clear();
@@ -30,9 +29,21 @@ namespace KorisnickiInterfejs
             pnlMain.Controls.Add(userControl);
         }
 
+        private void unosNovogČlanaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCKreiranjeClana());
+        }
+
+      
         private void pretragaČlanovaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangePanel(new UCPretragaClanova());
         }
+
+        private void članarineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCEvidentiranjeClanarine());
+        }
     }
+    
 }

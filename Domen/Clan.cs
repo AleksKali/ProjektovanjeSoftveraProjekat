@@ -18,5 +18,9 @@ namespace Domen
         public string Ulica { get; set; }
         public string BrojUlice { get; set; }
         public string Kontakt { get; set; }
+        public override string ToString()
+        {
+            return Ime+ " "+ Prezime;
+        }
     }
 }

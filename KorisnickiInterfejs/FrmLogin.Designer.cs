@@ -90,6 +90,7 @@ namespace KorisnickiInterfejs
             this.Controls.Add(this.lblKorisnickoIme);
             this.Controls.Add(this.btnLogin);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uloguj se";
             this.ResumeLayout(false);
             this.PerformLayout();

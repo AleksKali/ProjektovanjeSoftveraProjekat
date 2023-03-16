@@ -9,9 +9,22 @@ namespace Domen
     [Serializable]
     public class Primerak
     {
-        public int IgricaId { get; set; } //Vezbe08 tako je uradila, kao ne treba nam nista sem id-ja jer je slab obj
+        public Igrica Igrica { get; set; } 
         public int InventarskiBroj { get; set; }
         public int GodinaIzdanja { get; set; }
         public bool Izdat { get; set; }
+
+        public override string ToString()
+        {
+            return $"{InventarskiBroj}"; 
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj is Primerak p)
+            {
+                return p.InventarskiBroj == InventarskiBroj;
+            }
+            return false;
+        }
     }
 }

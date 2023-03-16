@@ -1,6 +1,7 @@
 ﻿using KorisnickiInterfejs.UserControls;
 using KorisnickiInterfejs.UserControls.Clanarina;
 using KorisnickiInterfejs.UserControls.Igrice;
+using KorisnickiInterfejs.UserControls.Zaduzenje;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +44,24 @@ namespace KorisnickiInterfejs
         private void članarineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangePanel(new UCEvidentiranjeClanarine());
+        }
+
+        private void pretragaZaduženjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            ChangePanel(new UCPretragaZaduzenja());
+        }
+
+        private void kreiranjeNovogZaduženjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCKreiranjeZaduzenja());
+        }
+
+        private void igriceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCPretragaIgrica());
+           
+
         }
     }
     

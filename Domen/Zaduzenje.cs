@@ -14,5 +14,7 @@ namespace Domen
         public DateTime DatumZaduzenja { get; set; }
         public DateTime DatumRazduzenja { get; set; }
         public Korisnik Korisnik { get; set; }
+
+        public List<Primerak> Primerci { get; set; }
     }
 }

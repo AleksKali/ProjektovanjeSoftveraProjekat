@@ -30,8 +30,6 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbDatumDo = new System.Windows.Forms.TextBox();
-            this.tbDatumOd = new System.Windows.Forms.TextBox();
             this.cbIzborClana = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSacuvaj = new System.Windows.Forms.Button();
@@ -39,14 +37,16 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.label2 = new System.Windows.Forms.Label();
             this.dgvClanarine = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatumDo = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanarine)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbDatumDo);
-            this.groupBox1.Controls.Add(this.tbDatumOd);
+            this.groupBox1.Controls.Add(this.dtpDatumDo);
+            this.groupBox1.Controls.Add(this.dtpDatumOd);
             this.groupBox1.Controls.Add(this.cbIzborClana);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnSacuvaj);
@@ -60,24 +60,6 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Evidentiranje nove članarine";
-            // 
-            // tbDatumDo
-            // 
-            this.tbDatumDo.Location = new System.Drawing.Point(133, 148);
-            this.tbDatumDo.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDatumDo.Name = "tbDatumDo";
-            this.tbDatumDo.ReadOnly = true;
-            this.tbDatumDo.Size = new System.Drawing.Size(265, 22);
-            this.tbDatumDo.TabIndex = 8;
-            // 
-            // tbDatumOd
-            // 
-            this.tbDatumOd.Location = new System.Drawing.Point(133, 98);
-            this.tbDatumOd.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDatumOd.Name = "tbDatumOd";
-            this.tbDatumOd.ReadOnly = true;
-            this.tbDatumOd.Size = new System.Drawing.Size(265, 22);
-            this.tbDatumOd.TabIndex = 7;
             // 
             // cbIzborClana
             // 
@@ -107,6 +89,7 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.btnSacuvaj.TabIndex = 4;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // label3
             // 
@@ -148,6 +131,20 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.label1.TabIndex = 3;
             this.label1.Text = "Sve članarine:";
             // 
+            // dtpDatumOd
+            // 
+            this.dtpDatumOd.Location = new System.Drawing.Point(132, 103);
+            this.dtpDatumOd.Name = "dtpDatumOd";
+            this.dtpDatumOd.Size = new System.Drawing.Size(266, 22);
+            this.dtpDatumOd.TabIndex = 7;
+            // 
+            // dtpDatumDo
+            // 
+            this.dtpDatumDo.Location = new System.Drawing.Point(133, 148);
+            this.dtpDatumDo.Name = "dtpDatumDo";
+            this.dtpDatumDo.Size = new System.Drawing.Size(266, 22);
+            this.dtpDatumDo.TabIndex = 8;
+            // 
             // UCEvidentiranjeClanarine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,7 +165,6 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbDatumOd;
         private System.Windows.Forms.ComboBox cbIzborClana;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSacuvaj;
@@ -176,6 +172,7 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvClanarine;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbDatumDo;
+        private System.Windows.Forms.DateTimePicker dtpDatumDo;
+        private System.Windows.Forms.DateTimePicker dtpDatumOd;
     }
 }

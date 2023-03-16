@@ -40,7 +40,7 @@ namespace KorisnickiInterfejs.UserControls
             // btnObrisiClana
             // 
             this.btnObrisiClana.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnObrisiClana.Location = new System.Drawing.Point(788, 171);
+            this.btnObrisiClana.Location = new System.Drawing.Point(788, 163);
             this.btnObrisiClana.Name = "btnObrisiClana";
             this.btnObrisiClana.Size = new System.Drawing.Size(118, 28);
             this.btnObrisiClana.TabIndex = 14;
@@ -51,7 +51,7 @@ namespace KorisnickiInterfejs.UserControls
             // btnDetalji
             // 
             this.btnDetalji.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDetalji.Location = new System.Drawing.Point(788, 123);
+            this.btnDetalji.Location = new System.Drawing.Point(788, 115);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(118, 28);
             this.btnDetalji.TabIndex = 13;
@@ -63,17 +63,17 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.dgvClanPretraga.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvClanPretraga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClanPretraga.Location = new System.Drawing.Point(19, 92);
+            this.dgvClanPretraga.Location = new System.Drawing.Point(19, 84);
             this.dgvClanPretraga.Name = "dgvClanPretraga";
             this.dgvClanPretraga.RowHeadersWidth = 51;
             this.dgvClanPretraga.RowTemplate.Height = 24;
-            this.dgvClanPretraga.Size = new System.Drawing.Size(749, 520);
+            this.dgvClanPretraga.Size = new System.Drawing.Size(749, 439);
             this.dgvClanPretraga.TabIndex = 11;
             // 
             // tbImeClana
             // 
             this.tbImeClana.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbImeClana.Location = new System.Drawing.Point(158, 57);
+            this.tbImeClana.Location = new System.Drawing.Point(158, 49);
             this.tbImeClana.Name = "tbImeClana";
             this.tbImeClana.Size = new System.Drawing.Size(204, 22);
             this.tbImeClana.TabIndex = 10;
@@ -83,7 +83,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblimeClana.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblimeClana.AutoSize = true;
-            this.lblimeClana.Location = new System.Drawing.Point(28, 57);
+            this.lblimeClana.Location = new System.Drawing.Point(28, 49);
             this.lblimeClana.Name = "lblimeClana";
             this.lblimeClana.Size = new System.Drawing.Size(124, 17);
             this.lblimeClana.TabIndex = 9;
@@ -99,7 +99,7 @@ namespace KorisnickiInterfejs.UserControls
             this.Controls.Add(this.tbImeClana);
             this.Controls.Add(this.lblimeClana);
             this.Name = "UCPretragaClanova";
-            this.Size = new System.Drawing.Size(951, 636);
+            this.Size = new System.Drawing.Size(951, 620);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanPretraga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

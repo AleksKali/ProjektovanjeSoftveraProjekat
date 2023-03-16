@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domen", "Domen\Domen.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KorisnickiInterfejs", "KorisnickiInterfejs\KorisnickiInterfejs.csproj", "{4A2BC9C9-B811-4C55-BEB0-6D81652B0127}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemskeOperacije", "SistemskeOperacije\SistemskeOperacije.csproj", "{0004EC75-5093-44E0-BF25-AE9B2E25ED3C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplikacionaLogika", "AplikacionaLogika\AplikacionaLogika.csproj", "{0F7A5E30-F357-4DCC-B0F8-694DF2BC6F69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBBroker", "DBBroker\DBBroker.csproj", "{95565625-35E0-4E9D-BD1A-8D92F64B37CB}"
@@ -29,10 +27,6 @@ Global
 		{4A2BC9C9-B811-4C55-BEB0-6D81652B0127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2BC9C9-B811-4C55-BEB0-6D81652B0127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A2BC9C9-B811-4C55-BEB0-6D81652B0127}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0004EC75-5093-44E0-BF25-AE9B2E25ED3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0004EC75-5093-44E0-BF25-AE9B2E25ED3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0004EC75-5093-44E0-BF25-AE9B2E25ED3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0004EC75-5093-44E0-BF25-AE9B2E25ED3C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F7A5E30-F357-4DCC-B0F8-694DF2BC6F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F7A5E30-F357-4DCC-B0F8-694DF2BC6F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F7A5E30-F357-4DCC-B0F8-694DF2BC6F69}.Release|Any CPU.ActiveCfg = Release|Any CPU

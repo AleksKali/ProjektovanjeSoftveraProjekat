@@ -2,28 +2,29 @@
 using Domen;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Repozitorijum
 {
-    public class IgricaRepozitorijum
+    public class ZaduzenjeRepozitorijum
     {
-
         private Broker broker = new Broker();
 
-        public List<Igrica> VratiIgrice(string ime)
+
+        public List<ZaduzenjePrimerak> VratiZaduzenja()
         {
             try
             {
                 broker.OpenConnection();
-                return broker.VratiIgrice(ime);
+                return broker.VratiZaduzenja();
             }
 
             catch (Exception ex)
             {
-
+                Debug.WriteLine(">>>>>> " + ex.Message);
                 throw;
             }
             finally
@@ -32,36 +33,28 @@ namespace Repozitorijum
             }
         }
 
-        public List<Igrica> VratiIgrice()
+        public void SacuvajZaduzenje(Zaduzenje zaduzenje)
         {
             try
             {
                 broker.OpenConnection();
-                return broker.VratiIgrice();
-            }
+                broker.BeginTransaction();
 
+                int id = broker.SacuvajZaduzenje(zaduzenje);
+                foreach (Primerak p in zaduzenje.Primerci)
+                {
+                    
+                    broker.SacuvajPrimerakZaduzenja(id, p);
+                    broker.UpdateIzdat(p);
+                }
+
+                broker.Commit();
+                
+            }
             catch (Exception ex)
             {
-
-                throw;
-            }
-            finally
-            {
-                broker.CloseConnection();
-            }
-        }
-        
-        public List<Primerak> VratiPrimerke(Igrica i)
-        {
-            try
-            {
-                broker.OpenConnection();
-                return broker.VratiPrimerke(i);
-            }
-
-            catch (Exception ex)
-            {
-
+                broker.Rollback();
+                Debug.WriteLine(">>>>>> " + ex.Message);
                 throw;
             }
             finally
@@ -70,4 +63,6 @@ namespace Repozitorijum
             }
         }
     }
+
+    
 }

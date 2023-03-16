@@ -64,18 +64,6 @@
     <Compile Include="FrmDetaljiZaduzenja.Designer.cs">
       <DependentUpon>FrmDetaljiZaduzenja.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEvidentiranjeClanarine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEvidentiranjeClanarine.Designer.cs">
-      <DependentUpon>FrmEvidentiranjeClanarine.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmKreiranjeNovogClana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmKreiranjeNovogClana.Designer.cs">
-      <DependentUpon>FrmKreiranjeNovogClana.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,20 +76,8 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPretragaZaduzenja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPretragaZaduzenja.Designer.cs">
-      <DependentUpon>FrmPretragaZaduzenja.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmKreiranjeNovogZaduzenja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmKreiranjeNovogZaduzenja.Designer.cs">
-      <DependentUpon>FrmKreiranjeNovogZaduzenja.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\Clanarina\UCEvidentiranjeClanarine.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +102,18 @@
     <Compile Include="UserControls\Igrice\UCPretragaIgrica.Designer.cs">
       <DependentUpon>UCPretragaIgrica.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Zaduzenje\UCKreiranjeZaduzenja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Zaduzenje\UCKreiranjeZaduzenja.Designer.cs">
+      <DependentUpon>UCKreiranjeZaduzenja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Zaduzenje\UCPretragaZaduzenja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Zaduzenje\UCPretragaZaduzenja.Designer.cs">
+      <DependentUpon>UCPretragaZaduzenja.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmDetaljiClana.resx">
       <DependentUpon>FrmDetaljiClana.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,20 +123,11 @@
     <EmbeddedResource Include="FrmDetaljiZaduzenja.resx">
       <DependentUpon>FrmDetaljiZaduzenja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEvidentiranjeClanarine.resx">
-      <DependentUpon>FrmEvidentiranjeClanarine.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmKreiranjeNovogClana.resx">
-      <DependentUpon>FrmKreiranjeNovogClana.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPretragaZaduzenja.resx">
-      <DependentUpon>FrmPretragaZaduzenja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,9 +138,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmKreiranjeNovogZaduzenja.resx">
-      <DependentUpon>FrmKreiranjeNovogZaduzenja.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Clanarina\UCEvidentiranjeClanarine.resx">
       <DependentUpon>UCEvidentiranjeClanarine.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Igrice\UCPretragaIgrica.resx">
       <DependentUpon>UCPretragaIgrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Zaduzenje\UCKreiranjeZaduzenja.resx">
+      <DependentUpon>UCKreiranjeZaduzenja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Zaduzenje\UCPretragaZaduzenja.resx">
+      <DependentUpon>UCPretragaZaduzenja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -197,5 +179,6 @@
       <Name>Domen</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

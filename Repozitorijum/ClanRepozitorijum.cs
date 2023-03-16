@@ -104,5 +104,24 @@ namespace Repozitorijum
                 broker.CloseConnection();
             }
         }
+
+        public List<Clan> VratiClanove()
+        {
+            try
+            {
+                broker.OpenConnection();
+                return broker.VratiClanove();
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
     }
 }

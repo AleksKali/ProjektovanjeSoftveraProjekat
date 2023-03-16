@@ -14,5 +14,10 @@ namespace Domen
         public string Prezime { get; set; }
         public string KorisnickoIme { get; set; }
         public string KorisnickaSifra { get; set; }
+
+        public override string ToString()
+        {
+            return Ime+" "+Prezime;
+        }
     }
 }

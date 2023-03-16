@@ -12,5 +12,9 @@ namespace Domen
         public int IgricaId { get; set; }
         public string Naziv { get; set; }
         public Proizvodjac Proizvodjac { get; set; }
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

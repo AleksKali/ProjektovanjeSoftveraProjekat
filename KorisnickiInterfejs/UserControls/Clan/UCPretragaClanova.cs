@@ -17,6 +17,12 @@ namespace KorisnickiInterfejs.UserControls
         public UCPretragaClanova()
         {
             InitializeComponent();
+            Init();
+        }
+
+        private void Init()
+        {
+            dgvClanPretraga.DataSource = Kontroler.Instance.VratiClanove();
         }
 
         private void btnObrisiClana_Click(object sender, EventArgs e)

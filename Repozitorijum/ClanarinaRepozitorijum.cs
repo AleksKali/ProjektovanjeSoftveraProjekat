@@ -30,5 +30,62 @@ namespace Repozitorijum
                 broker.CloseConnection();
             }
         }
+
+        public DateTime VratiDatumDoClanarine(Clan c)
+        {
+            try
+            {
+                broker.OpenConnection();
+                return broker.VratiDatumDoClanarine(c);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
+
+        public void SacuvajClanarinu(Clanarina c)
+        {
+            try
+            {
+                broker.OpenConnection();
+                broker.SacuvajClanarinu(c);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
+
+        public void IzbrisiClanarinu(Clanarina cl)
+        {
+           try
+            {
+                broker.OpenConnection();
+                broker.IzbrisiClanarinu(cl);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
     }
 }

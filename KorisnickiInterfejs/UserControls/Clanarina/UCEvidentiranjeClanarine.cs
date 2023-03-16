@@ -28,13 +28,19 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
                 dgvClanarine.ReadOnly = true;
                 dgvClanarine.Columns[0].Visible = false;
 
-
+                cbIzborClana.DataSource = Kontroler.Instance.VratiClanove();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+            Kontroler.Instance.SacuvajClanarinu(cbIzborClana, dtpDatumOd, dtpDatumDo);
+            dgvClanarine.DataSource=new BindingList<Domen.Clanarina> (Kontroler.Instance.VratiClanarine());
         }
     }
 }

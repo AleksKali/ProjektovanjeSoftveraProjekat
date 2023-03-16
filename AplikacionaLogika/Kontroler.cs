@@ -3,6 +3,7 @@ using Domen;
 using Repozitorijum;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,15 @@ namespace AplikacionaLogika
                 return instance;
             }
         }
-
         
+        public List<Primerak> VratiPrimerke(ComboBox cbIgrica)
+        {
+            return igricaRepozitorijum.VratiPrimerke((Igrica)cbIgrica.SelectedItem);
+            return new List<Primerak>();
+        }
+
+
+
         #endregion
 
         public Korisnik Korisnik { get; private set; }
@@ -38,12 +46,86 @@ namespace AplikacionaLogika
         private Broker broker = new Broker();
         private KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
         private ClanRepozitorijum clanRepozitorijum = new ClanRepozitorijum();
+
+       
+
         private IgricaRepozitorijum igricaRepozitorijum = new IgricaRepozitorijum();
         private ClanarinaRepozitorijum clanarinaRepozitorijum = new ClanarinaRepozitorijum();
+        private ZaduzenjeRepozitorijum zaduzenjeRepozitorijum = new ZaduzenjeRepozitorijum();
 
-        public int DodajClana(Clan clan) //fja dodata 4.marta
+
+
+        public List<ZaduzenjePrimerak> VratiZaduzenja()
         {
-            return clanRepozitorijum.DodajClana(clan); //moze da baci exception moras to da obradis
+            return zaduzenjeRepozitorijum.VratiZaduzenja();
+        }
+
+
+        public int DodajClana(Clan clan) 
+        {
+            return clanRepozitorijum.DodajClana(clan);
+        }
+
+       
+
+        public void SacuvajClanarinu(ComboBox cbIzborClana, DateTimePicker dtpDatumOd, DateTimePicker dtpDatumDo)
+        {
+            Clanarina c = new Clanarina
+            {
+                Clan = (Clan)cbIzborClana.SelectedItem,
+                DatumDo = dtpDatumDo.Value,
+                DatumOd = dtpDatumOd.Value
+            };
+            if (c.DatumDo < c.DatumOd)
+            {
+                MessageBox.Show("Datum do mora biti veci od datuma od. ");
+                return;
+            }
+
+            List < Clanarina > clanarine = clanarinaRepozitorijum.VratiClanarine();
+            foreach (Clanarina cl in clanarine)
+            {
+                if(cl.Clan.ClanskiBroj == c.Clan.ClanskiBroj)
+                {
+                    if(cl.DatumDo > c.DatumOd)
+                    {
+                        MessageBox.Show("Clanarina istice" + cl.DatumDo + ". Promenite datum od.");
+                        return;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            clanarinaRepozitorijum.IzbrisiClanarinu(cl);
+                            clanarinaRepozitorijum.SacuvajClanarinu(c);
+                            MessageBox.Show("Clanarina uspesno sacuvana!");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Greska pri skladistenju u bazu. ");
+                            Debug.WriteLine(">>>>>>>>> " + ex.Message);
+                        }
+                        
+                    }
+                }
+            }
+
+
+            
+        }
+
+        public void SacuvajZaduzenje(Zaduzenje zaduzenje)
+        {
+            try
+            {
+                zaduzenjeRepozitorijum.SacuvajZaduzenje(zaduzenje);
+                MessageBox.Show("Uspesno sacuvano zaduzenje!");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Zaduzenje nije sacuvano."+ex.Message);
+            }
         }
 
         public Korisnik Login(Korisnik user)
@@ -84,7 +166,10 @@ namespace AplikacionaLogika
         {
             clanRepozitorijum.ObrisiClana(c);
         }
-
+        public List<Clan> VratiClanove()
+        {
+            return clanRepozitorijum.VratiClanove();
+        }
         public List<Zaduzenje> VratiZaduzenjaClana(Clan c)
         {
             List<Zaduzenje> zaduzenja = clanRepozitorijum.VratiZaduzenjaClana(c);

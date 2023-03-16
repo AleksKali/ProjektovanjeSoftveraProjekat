@@ -10,13 +10,9 @@ C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\bin\Debug\DBB
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.csproj.AssemblyReference.cache
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmDetaljiIgrice.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmDetaljiZaduzenja.resources
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmEvidentiranjeClanarine.resources
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.KreiranjeNovogClana.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmLogin.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmMain.resources
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmPretragaZaduzenja.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.Properties.Resources.resources
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmKreiranjeNovogZaduzenja.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.csproj.GenerateResource.cache
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.csproj.CoreCompileInputs.cache
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.csproj.CopyComplete
@@ -29,3 +25,5 @@ C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\Kor
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmDetaljiClana.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.Igrice.UCPretragaIgrica.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.Clanarina.UCEvidentiranjeClanarine.resources
+C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.Zaduzenje.UCKreiranjeZaduzenja.resources
+C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.UserControls.Zaduzenje.UCPretragaZaduzenja.resources

@@ -38,6 +38,7 @@ namespace KorisnickiInterfejs
             this.kreiranjeNovogZaduženjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.članarineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.igriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@ namespace KorisnickiInterfejs
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.liToolStripMenuItem,
             this.zaduženjaToolStripMenuItem,
-            this.članarineToolStripMenuItem});
+            this.članarineToolStripMenuItem,
+            this.igriceToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1018, 28);
@@ -91,12 +93,14 @@ namespace KorisnickiInterfejs
             this.pretragaZaduženjaToolStripMenuItem.Name = "pretragaZaduženjaToolStripMenuItem";
             this.pretragaZaduženjaToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.pretragaZaduženjaToolStripMenuItem.Text = "Pretraga zaduženja";
+            this.pretragaZaduženjaToolStripMenuItem.Click += new System.EventHandler(this.pretragaZaduženjaToolStripMenuItem_Click);
             // 
             // kreiranjeNovogZaduženjaToolStripMenuItem
             // 
             this.kreiranjeNovogZaduženjaToolStripMenuItem.Name = "kreiranjeNovogZaduženjaToolStripMenuItem";
             this.kreiranjeNovogZaduženjaToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.kreiranjeNovogZaduženjaToolStripMenuItem.Text = "Kreiranje novog zaduženja";
+            this.kreiranjeNovogZaduženjaToolStripMenuItem.Click += new System.EventHandler(this.kreiranjeNovogZaduženjaToolStripMenuItem_Click);
             // 
             // članarineToolStripMenuItem
             // 
@@ -112,14 +116,22 @@ namespace KorisnickiInterfejs
             this.pnlMain.Size = new System.Drawing.Size(1006, 697);
             this.pnlMain.TabIndex = 2;
             // 
+            // igriceToolStripMenuItem
+            // 
+            this.igriceToolStripMenuItem.Name = "igriceToolStripMenuItem";
+            this.igriceToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.igriceToolStripMenuItem.Text = "Igrice";
+            this.igriceToolStripMenuItem.Click += new System.EventHandler(this.igriceToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 460);
+            this.ClientSize = new System.Drawing.Size(1018, 702);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -138,5 +150,6 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.ToolStripMenuItem kreiranjeNovogZaduženjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem članarineToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.ToolStripMenuItem igriceToolStripMenuItem;
     }
 }

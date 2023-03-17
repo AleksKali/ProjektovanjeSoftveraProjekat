@@ -27,8 +27,7 @@ namespace KorisnickiInterfejs
         {
             try
             {
-                dgvTrenutnaZaduzenja.DataSource = null; //posto nekad nece da nam radi
-                dgvTrenutnaZaduzenja.DataSource = new BindingList<Zaduzenje>(Kontroler.Instance.VratiZaduzenjaClana(c));
+                dgvTrenutnaZaduzenja.DataSource = Kontroler.Instance.VratiZaduzenjaClana(c.ClanskiBroj);
                 dgvTrenutnaZaduzenja.ReadOnly = true;
 
                 tbClanskiBroj.ReadOnly = true;

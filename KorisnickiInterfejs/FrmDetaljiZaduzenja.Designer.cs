@@ -32,22 +32,15 @@ namespace KorisnickiInterfejs
             this.tbDatumZaduzenja = new System.Windows.Forms.TextBox();
             this.tbZaduzenjeID = new System.Windows.Forms.TextBox();
             this.lblClan = new System.Windows.Forms.Label();
-            this.cbClan = new System.Windows.Forms.ComboBox();
             this.lblDatumZaduzenja = new System.Windows.Forms.Label();
             this.lblZaduzenjeID = new System.Windows.Forms.Label();
             this.dgvSviPrimerci = new System.Windows.Forms.DataGridView();
             this.lblSviPrimerci = new System.Windows.Forms.Label();
-            this.btnDetaljiPrimerka = new System.Windows.Forms.Button();
-            this.btnIzbrisiPrimerak = new System.Windows.Forms.Button();
-            this.gbIzmenaIgrica = new System.Windows.Forms.GroupBox();
-            this.cbIgrica = new System.Windows.Forms.ComboBox();
-            this.cbPrimerak = new System.Windows.Forms.ComboBox();
-            this.lblPrimerak = new System.Windows.Forms.Label();
-            this.lblIgrica = new System.Windows.Forms.Label();
-            this.btnSacuvajIgricu = new System.Windows.Forms.Button();
-            this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.btnRazduziSve = new System.Windows.Forms.Button();
+            this.btnRazduziIgricu = new System.Windows.Forms.Button();
+            this.tbClan = new System.Windows.Forms.TextBox();
+            this.btnZapamti = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviPrimerci)).BeginInit();
-            this.gbIzmenaIgrica.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbDatumZaduzenja
@@ -72,14 +65,6 @@ namespace KorisnickiInterfejs
             this.lblClan.Size = new System.Drawing.Size(40, 17);
             this.lblClan.TabIndex = 9;
             this.lblClan.Text = "Član:";
-            // 
-            // cbClan
-            // 
-            this.cbClan.FormattingEnabled = true;
-            this.cbClan.Location = new System.Drawing.Point(249, 128);
-            this.cbClan.Name = "cbClan";
-            this.cbClan.Size = new System.Drawing.Size(189, 24);
-            this.cbClan.TabIndex = 8;
             // 
             // lblDatumZaduzenja
             // 
@@ -118,112 +103,62 @@ namespace KorisnickiInterfejs
             this.lblSviPrimerci.TabIndex = 13;
             this.lblSviPrimerci.Text = "Svi primerci";
             // 
-            // btnDetaljiPrimerka
+            // btnRazduziSve
             // 
-            this.btnDetaljiPrimerka.Location = new System.Drawing.Point(667, 262);
-            this.btnDetaljiPrimerka.Name = "btnDetaljiPrimerka";
-            this.btnDetaljiPrimerka.Size = new System.Drawing.Size(97, 26);
-            this.btnDetaljiPrimerka.TabIndex = 14;
-            this.btnDetaljiPrimerka.Text = "Detalji";
-            this.btnDetaljiPrimerka.UseVisualStyleBackColor = true;
+            this.btnRazduziSve.Location = new System.Drawing.Point(657, 413);
+            this.btnRazduziSve.Name = "btnRazduziSve";
+            this.btnRazduziSve.Size = new System.Drawing.Size(117, 40);
+            this.btnRazduziSve.TabIndex = 14;
+            this.btnRazduziSve.Text = "Razduži sve";
+            this.btnRazduziSve.UseVisualStyleBackColor = true;
+            this.btnRazduziSve.Click += new System.EventHandler(this.btnRazduziSve_Click);
             // 
-            // btnIzbrisiPrimerak
+            // btnRazduziIgricu
             // 
-            this.btnIzbrisiPrimerak.Location = new System.Drawing.Point(667, 307);
-            this.btnIzbrisiPrimerak.Name = "btnIzbrisiPrimerak";
-            this.btnIzbrisiPrimerak.Size = new System.Drawing.Size(97, 26);
-            this.btnIzbrisiPrimerak.TabIndex = 15;
-            this.btnIzbrisiPrimerak.Text = "Izbrisi";
-            this.btnIzbrisiPrimerak.UseVisualStyleBackColor = true;
+            this.btnRazduziIgricu.Location = new System.Drawing.Point(657, 236);
+            this.btnRazduziIgricu.Name = "btnRazduziIgricu";
+            this.btnRazduziIgricu.Size = new System.Drawing.Size(105, 30);
+            this.btnRazduziIgricu.TabIndex = 18;
+            this.btnRazduziIgricu.Text = "Razduži igricu";
+            this.btnRazduziIgricu.UseVisualStyleBackColor = true;
+            this.btnRazduziIgricu.Click += new System.EventHandler(this.btnRazduziIgricu_Click);
             // 
-            // gbIzmenaIgrica
+            // tbClan
             // 
-            this.gbIzmenaIgrica.Controls.Add(this.cbIgrica);
-            this.gbIzmenaIgrica.Controls.Add(this.cbPrimerak);
-            this.gbIzmenaIgrica.Controls.Add(this.lblPrimerak);
-            this.gbIzmenaIgrica.Controls.Add(this.lblIgrica);
-            this.gbIzmenaIgrica.Controls.Add(this.btnSacuvajIgricu);
-            this.gbIzmenaIgrica.Location = new System.Drawing.Point(99, 472);
-            this.gbIzmenaIgrica.Name = "gbIzmenaIgrica";
-            this.gbIzmenaIgrica.Size = new System.Drawing.Size(420, 215);
-            this.gbIzmenaIgrica.TabIndex = 16;
-            this.gbIzmenaIgrica.TabStop = false;
-            this.gbIzmenaIgrica.Text = "Izmena igrica";
+            this.tbClan.Location = new System.Drawing.Point(249, 128);
+            this.tbClan.Name = "tbClan";
+            this.tbClan.Size = new System.Drawing.Size(189, 22);
+            this.tbClan.TabIndex = 19;
             // 
-            // cbIgrica
+            // btnZapamti
             // 
-            this.cbIgrica.FormattingEnabled = true;
-            this.cbIgrica.Location = new System.Drawing.Point(165, 44);
-            this.cbIgrica.Name = "cbIgrica";
-            this.cbIgrica.Size = new System.Drawing.Size(189, 24);
-            this.cbIgrica.TabIndex = 7;
-            // 
-            // cbPrimerak
-            // 
-            this.cbPrimerak.FormattingEnabled = true;
-            this.cbPrimerak.Location = new System.Drawing.Point(165, 93);
-            this.cbPrimerak.Name = "cbPrimerak";
-            this.cbPrimerak.Size = new System.Drawing.Size(189, 24);
-            this.cbPrimerak.TabIndex = 8;
-            // 
-            // lblPrimerak
-            // 
-            this.lblPrimerak.AutoSize = true;
-            this.lblPrimerak.Location = new System.Drawing.Point(44, 96);
-            this.lblPrimerak.Name = "lblPrimerak";
-            this.lblPrimerak.Size = new System.Drawing.Size(113, 17);
-            this.lblPrimerak.TabIndex = 2;
-            this.lblPrimerak.Text = "Izaberi primerak:";
-            // 
-            // lblIgrica
-            // 
-            this.lblIgrica.AutoSize = true;
-            this.lblIgrica.Location = new System.Drawing.Point(44, 44);
-            this.lblIgrica.Name = "lblIgrica";
-            this.lblIgrica.Size = new System.Drawing.Size(92, 17);
-            this.lblIgrica.TabIndex = 1;
-            this.lblIgrica.Text = "Izaberi igricu:";
-            // 
-            // btnSacuvajIgricu
-            // 
-            this.btnSacuvajIgricu.Location = new System.Drawing.Point(217, 156);
-            this.btnSacuvajIgricu.Name = "btnSacuvajIgricu";
-            this.btnSacuvajIgricu.Size = new System.Drawing.Size(75, 28);
-            this.btnSacuvajIgricu.TabIndex = 0;
-            this.btnSacuvajIgricu.Text = "OK";
-            this.btnSacuvajIgricu.UseVisualStyleBackColor = true;
-            // 
-            // btnSacuvaj
-            // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(348, 736);
-            this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(135, 29);
-            this.btnSacuvaj.TabIndex = 17;
-            this.btnSacuvaj.Text = "Sačuvaj izmene";
-            this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnZapamti.Location = new System.Drawing.Point(302, 499);
+            this.btnZapamti.Name = "btnZapamti";
+            this.btnZapamti.Size = new System.Drawing.Size(119, 28);
+            this.btnZapamti.TabIndex = 20;
+            this.btnZapamti.Text = "Zapamti";
+            this.btnZapamti.UseVisualStyleBackColor = true;
+            this.btnZapamti.Click += new System.EventHandler(this.btnZapamti_Click);
             // 
             // FrmDetaljiZaduzenja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 812);
-            this.Controls.Add(this.btnSacuvaj);
-            this.Controls.Add(this.gbIzmenaIgrica);
-            this.Controls.Add(this.btnIzbrisiPrimerak);
-            this.Controls.Add(this.btnDetaljiPrimerka);
+            this.Controls.Add(this.btnZapamti);
+            this.Controls.Add(this.tbClan);
+            this.Controls.Add(this.btnRazduziIgricu);
+            this.Controls.Add(this.btnRazduziSve);
             this.Controls.Add(this.lblSviPrimerci);
             this.Controls.Add(this.dgvSviPrimerci);
             this.Controls.Add(this.tbDatumZaduzenja);
             this.Controls.Add(this.tbZaduzenjeID);
             this.Controls.Add(this.lblClan);
-            this.Controls.Add(this.cbClan);
             this.Controls.Add(this.lblDatumZaduzenja);
             this.Controls.Add(this.lblZaduzenjeID);
             this.Name = "FrmDetaljiZaduzenja";
             this.Text = "FrmDetaljiZaduzenja";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviPrimerci)).EndInit();
-            this.gbIzmenaIgrica.ResumeLayout(false);
-            this.gbIzmenaIgrica.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,19 +169,13 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.TextBox tbDatumZaduzenja;
         private System.Windows.Forms.TextBox tbZaduzenjeID;
         private System.Windows.Forms.Label lblClan;
-        private System.Windows.Forms.ComboBox cbClan;
         private System.Windows.Forms.Label lblDatumZaduzenja;
         private System.Windows.Forms.Label lblZaduzenjeID;
         private System.Windows.Forms.DataGridView dgvSviPrimerci;
         private System.Windows.Forms.Label lblSviPrimerci;
-        private System.Windows.Forms.Button btnDetaljiPrimerka;
-        private System.Windows.Forms.Button btnIzbrisiPrimerak;
-        private System.Windows.Forms.GroupBox gbIzmenaIgrica;
-        private System.Windows.Forms.ComboBox cbIgrica;
-        private System.Windows.Forms.ComboBox cbPrimerak;
-        private System.Windows.Forms.Label lblPrimerak;
-        private System.Windows.Forms.Label lblIgrica;
-        private System.Windows.Forms.Button btnSacuvajIgricu;
-        private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Button btnRazduziSve;
+        private System.Windows.Forms.Button btnRazduziIgricu;
+        private System.Windows.Forms.TextBox tbClan;
+        private System.Windows.Forms.Button btnZapamti;
     }
 }

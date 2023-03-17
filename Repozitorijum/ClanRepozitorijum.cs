@@ -86,24 +86,7 @@ namespace Repozitorijum
             }
         }
 
-        public List<Zaduzenje> VratiZaduzenjaClana(Clan c)
-        {
-            try
-            {
-                broker.OpenConnection();
-                return broker.VratiZaduzenjaClana(c);
-            }
-
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-            finally
-            {
-                broker.CloseConnection();
-            }
-        }
+        
 
         public List<Clan> VratiClanove()
         {

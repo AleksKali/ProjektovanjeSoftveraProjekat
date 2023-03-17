@@ -10,7 +10,8 @@ namespace Domen
     public class ZaduzenjePrimerak
     {
         public int ZaduzenjeId { get; set; }
-        public int ClanskiBroj { get; set; }
+        //public int ClanskiBroj { get; set; }
+        public Clan Clan { get; set; }
         public DateTime DatumZaduzenja { get; set; }
        // public DateTime DatumRazduzenja { get; set; }
 

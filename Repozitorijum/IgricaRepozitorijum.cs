@@ -69,5 +69,24 @@ namespace Repozitorijum
                 broker.CloseConnection();
             }
         }
+
+        public List<Primerak> VratiPrimerkeZaduzenja(int zaduzenjeId)
+        {
+            try
+            {
+                broker.OpenConnection();
+                return broker.VratiPrimerkeZaduzenja(zaduzenjeId);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
     }
 }

@@ -31,17 +31,15 @@ namespace AplikacionaLogika
             }
         }
         
-        public List<Primerak> VratiPrimerke(ComboBox cbIgrica)
-        {
-            return igricaRepozitorijum.VratiPrimerke((Igrica)cbIgrica.SelectedItem);
-            return new List<Primerak>();
-        }
+    
 
 
 
         #endregion
 
         public Korisnik Korisnik { get; private set; }
+
+        
 
         private Broker broker = new Broker();
         private KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
@@ -54,7 +52,10 @@ namespace AplikacionaLogika
         private ZaduzenjeRepozitorijum zaduzenjeRepozitorijum = new ZaduzenjeRepozitorijum();
 
 
-
+        public List<Primerak> VratiPrimerkeZaduzenja(int zaduzenjeId)
+        {
+            return igricaRepozitorijum.VratiPrimerkeZaduzenja(zaduzenjeId);
+        }
         public List<ZaduzenjePrimerak> VratiZaduzenja()
         {
             return zaduzenjeRepozitorijum.VratiZaduzenja();
@@ -66,7 +67,25 @@ namespace AplikacionaLogika
             return clanRepozitorijum.DodajClana(clan);
         }
 
-       
+        public List<Primerak> VratiPrimerke(ComboBox cbIgrica)
+        {
+            return igricaRepozitorijum.VratiPrimerke((Igrica)cbIgrica.SelectedItem);
+            return new List<Primerak>();
+        }
+
+        public void Razduzi(Zaduzenje z)
+        {
+            try
+            {
+                zaduzenjeRepozitorijum.Razduzi(z);
+                MessageBox.Show("Uspesno razduzivanje.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Neuspesno razduzivanje.");
+                Debug.WriteLine(">>>>>>>>> " + ex.Message);
+            }
+        }
 
         public void SacuvajClanarinu(ComboBox cbIzborClana, DateTimePicker dtpDatumOd, DateTimePicker dtpDatumDo)
         {
@@ -170,9 +189,9 @@ namespace AplikacionaLogika
         {
             return clanRepozitorijum.VratiClanove();
         }
-        public List<Zaduzenje> VratiZaduzenjaClana(Clan c)
+        public List<ZaduzenjePrimerak> VratiZaduzenjaClana(int clanskiBroj)
         {
-            List<Zaduzenje> zaduzenja = clanRepozitorijum.VratiZaduzenjaClana(c);
+            List<ZaduzenjePrimerak> zaduzenja = zaduzenjeRepozitorijum.VratiZaduzenjaClana(clanskiBroj);
             return zaduzenja;
         }
         public List<Igrica> VratiIgrice(string ime)

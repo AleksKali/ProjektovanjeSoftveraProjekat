@@ -20,7 +20,8 @@ namespace Domen
         public string Kontakt { get; set; }
         public override string ToString()
         {
-            return Ime+ " "+ Prezime;
+            //return Ime+ " "+ Prezime;
+            return $"{ClanskiBroj}";
         }
     }
 }

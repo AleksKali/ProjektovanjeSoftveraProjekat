@@ -67,6 +67,62 @@ namespace DBBroker
             return users;
         }
 
+        public List<Primerak> VratiPrimerkeZaduzenja(int zaduzenjeId)
+        {
+            List<Primerak> primerci = new List<Primerak>();
+
+            SqlCommand command = new SqlCommand("", connection);
+            command.CommandText = $"select p.InventarskiBroj as inventarskiBroj, p.godinaIzdanja as godinaIzdanja, i.Naziv as nazivIgrice from primerak p join ZaduzenjePrimerak zp on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join zaduzenje z on (z.ZaduzenjeID=zp.ZaduzenjeID) join Igrica i on (p.IgricaID=i.IgricaID) where z.ZaduzenjeID = {zaduzenjeId} and z.DatumRazduzenja IS NULL and p.izdat=1";
+
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Primerak p = new Primerak
+                    {
+
+                        
+                        Igrica = new Igrica{
+                           Naziv = (string)reader["nazivIgrice"]
+                        },
+                        InventarskiBroj = (int)reader["inventarskiBroj"],
+                        GodinaIzdanja = (int)reader["godinaIzdanja"]
+
+                    };
+                    primerci.Add(p);
+
+                }
+            }
+            return primerci;
+        }
+
+        public void RazduziPrimerak(Primerak p)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"update primerak set izdat=0 where inventarskiBroj= {p.InventarskiBroj}";
+
+            command.ExecuteNonQuery();
+        }
+
+        public int ProveraZaduzenja(Zaduzenje z)
+        {
+            int brojPrimeraka = 0;
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"select count(p.InventarskiBroj) from primerak p join ZaduzenjePrimerak zp on(p.InventarskiBroj=zp.InventarskiBroj and p.IgricaID=zp.IgricaID) join zaduzenje z on(zp.ZaduzenjeID=z.ZaduzenjeID) where z.zaduzenjeId={z.ZaduzenjeID} and p.izdat=1 group by z.ZaduzenjeID";
+
+            brojPrimeraka = (int)command.ExecuteScalar();
+            return brojPrimeraka;
+        }
+        public void Razduzi(Zaduzenje z)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"update zaduzenje set datumRazduzenja=@datumRazduzenja where zaduzenjeId= {z.ZaduzenjeID}"; 
+            command.Parameters.AddWithValue("@datumRazduzenja", DateTime.Now); 
+
+            command.ExecuteNonQuery();
+        }
+
         public int SacuvajZaduzenje(Zaduzenje zaduzenje)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
@@ -77,7 +133,7 @@ namespace DBBroker
             return (int)command.ExecuteScalar();
         }
 
-        public void UpdateIzdat(Primerak p)
+        public void ZaduziPrimerak(Primerak p)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"update primerak set izdat=1 where inventarskiBroj= {p.InventarskiBroj}";
@@ -127,7 +183,7 @@ namespace DBBroker
             List<ZaduzenjePrimerak> zaduzenja = new List<ZaduzenjePrimerak>();
 
             SqlCommand command = new SqlCommand("", connection);
-            command.CommandText = $"select z.Zaduzenjeid as zaduzenjeId, z.DatumZaduzenja as datumZaduzenja, z.clanskiBroj as clanskiBroj, k.ime as imeKorisnika, k.prezime as prezimeKorisnika, p.InventarskiBroj as inventarskiBroj, i.Naziv as nazivIgrice from zaduzenje z join ZaduzenjePrimerak zp on (z.ZaduzenjeID=zp.ZaduzenjeID) join Primerak p on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join Igrica i on (p.IgricaID=i.IgricaID) join korisnik k on (z.korisnikId=k.korisnikId) where z.DatumRazduzenja IS NULL";
+            command.CommandText = $"select c.ime as imeClana, c.prezime as prezimeClana, c.clanskiBroj as clanskiBroj, z.Zaduzenjeid as zaduzenjeId, z.DatumZaduzenja as datumZaduzenja, k.ime as imeKorisnika, k.prezime as prezimeKorisnika, p.InventarskiBroj as inventarskiBroj, i.Naziv as nazivIgrice from Clan c join zaduzenje z on (c.clanskiBroj = z.ClanskiBroj) join ZaduzenjePrimerak zp on (z.ZaduzenjeID=zp.ZaduzenjeID) join Primerak p on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join Igrica i on (p.IgricaID=i.IgricaID) join korisnik k on (z.korisnikId=k.korisnikId) where z.DatumRazduzenja IS NULL and p.Izdat=1";
 
 
             using (SqlDataReader reader = command.ExecuteReader())
@@ -139,7 +195,11 @@ namespace DBBroker
                         
                             ZaduzenjeId = (int)reader["zaduzenjeId"],
                             DatumZaduzenja = (DateTime)reader["datumZaduzenja"],
-                            ClanskiBroj = (int)reader["clanskiBroj"],
+                            Clan = new Clan {
+                                Ime = (string)reader["imeClana"],
+                                Prezime = (string)reader["prezimeClana"],
+                                ClanskiBroj = (int)reader["clanskiBroj"]
+                            },
                             NazivIgrice = (string)reader["nazivIgrice"],
                             InventarskiBrojPrimerka = (int)reader["inventarskiBroj"],
                             Korisnik = new Korisnik
@@ -147,6 +207,40 @@ namespace DBBroker
                                 Ime=(string)reader["imeKorisnika"],
                                 Prezime=(string)reader["prezimeKorisnika"]
                             }
+
+                    };
+                    zaduzenja.Add(zp);
+
+                }
+            }
+            return zaduzenja;
+        }
+
+        public List<ZaduzenjePrimerak> VratiZaduzenjaClana(int clanskiBroj)
+        {
+            List<ZaduzenjePrimerak> zaduzenja = new List<ZaduzenjePrimerak>();
+
+            SqlCommand command = new SqlCommand("", connection);
+            command.CommandText = $"select z.Zaduzenjeid as zaduzenjeId, z.DatumZaduzenja as datumZaduzenja, z.clanskiBroj as clanskiBroj, k.ime as imeKorisnika, k.prezime as prezimeKorisnika, p.InventarskiBroj as inventarskiBroj, i.Naziv as nazivIgrice from zaduzenje z join ZaduzenjePrimerak zp on (z.ZaduzenjeID=zp.ZaduzenjeID) join Primerak p on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join Igrica i on (p.IgricaID=i.IgricaID) join korisnik k on (z.korisnikId=k.korisnikId) where z.clanskiBroj={clanskiBroj} and z.DatumRazduzenja IS NULL and p.izdat=1";
+
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ZaduzenjePrimerak zp = new ZaduzenjePrimerak
+                    {
+
+                        ZaduzenjeId = (int)reader["zaduzenjeId"],
+                        DatumZaduzenja = (DateTime)reader["datumZaduzenja"],
+                        Clan = new Clan { ClanskiBroj = (int)reader["clanskiBroj"] }, //nije gotova fja
+                        NazivIgrice = (string)reader["nazivIgrice"],
+                        InventarskiBrojPrimerka = (int)reader["inventarskiBroj"],
+                        Korisnik = new Korisnik
+                        {
+                            Ime = (string)reader["imeKorisnika"],
+                            Prezime = (string)reader["prezimeKorisnika"]
+                        }
 
                     };
                     zaduzenja.Add(zp);
@@ -234,29 +328,6 @@ namespace DBBroker
             return clanovi;
         }
 
-        public List<Zaduzenje> VratiZaduzenjaClana(Clan clan)
-        {
-            List<Zaduzenje> zaduzenja = new List<Zaduzenje>();
-
-            SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"select z.Zaduzenjeid as zaduzenjeId, c.ClanskiBroj as clanskiBroj, z.DatumZaduzenja as datumZaduzenja, z.korisnikID as korisnikId, p.InventarskiBroj as inventarskiBroj, i.Naziv as nazivIgrice from zaduzenje z join clan c on (z.ClanskiBroj=c.ClanskiBroj) join ZaduzenjePrimerak zp on (z.ZaduzenjeID=zp.ZaduzenjeID) join Primerak p on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join Igrica i on (p.IgricaID=i.IgricaID) where ClanskiBroj={clan.ClanskiBroj}";
-
-           
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    Zaduzenje z = new Zaduzenje
-                    {
-                        ZaduzenjeID = (int)reader["ZaduzenjeID"],
-                        DatumZaduzenja = (DateTime)reader["DatumZaduzenja"]
-                    };
-                    zaduzenja.Add(z);
-                    
-                }
-            }
-            return zaduzenja;
-        }
         #region neki join
         /*command.CommandText = $"select z.Zaduzenjeid as zaduzenjeId, c.ClanskiBroj as clanskiBroj, z.DatumZaduzenja as datumZaduzenja, z.DatumRazduzenja as datumRazduzenja, z.korisnikID as korisnikId, c.DatumUclanjenja as datumUclanjenja, c.ime as imeClana, c.prezime as prezimeClana, c.jmbg as jmbgClana, c.kontakt as kontaktClana, c.Mail as mailClana, c.Ulica as ulicaClana, c.broj as brojUliceClana from zaduzenje z join clan c on (z.ClanskiBroj=c.ClanskiBroj) and z.ClanskiBroj={clan.ClanskiBroj}";
 

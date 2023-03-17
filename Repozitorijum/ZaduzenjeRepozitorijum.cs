@@ -32,6 +32,24 @@ namespace Repozitorijum
                 broker.CloseConnection();
             }
         }
+        public List<ZaduzenjePrimerak> VratiZaduzenjaClana(int clanskiBroj)
+        {
+            try
+            {
+                broker.OpenConnection();
+                return broker.VratiZaduzenjaClana(clanskiBroj);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
 
         public void SacuvajZaduzenje(Zaduzenje zaduzenje)
         {
@@ -40,17 +58,53 @@ namespace Repozitorijum
                 broker.OpenConnection();
                 broker.BeginTransaction();
 
-                int id = broker.SacuvajZaduzenje(zaduzenje);
+                int id = broker. SacuvajZaduzenje(zaduzenje);
                 foreach (Primerak p in zaduzenje.Primerci)
                 {
                     
                     broker.SacuvajPrimerakZaduzenja(id, p);
-                    broker.UpdateIzdat(p);
+                    broker.ZaduziPrimerak(p);
                 }
 
                 broker.Commit();
                 
             }
+            catch (Exception ex)
+            {
+                broker.Rollback();
+                Debug.WriteLine(">>>>>> " + ex.Message);
+                throw;
+            }
+            finally
+            {
+                broker.CloseConnection();
+            }
+        }
+
+        public void Razduzi(Zaduzenje z)
+        {
+            try
+            {
+                broker.OpenConnection();
+                broker.BeginTransaction();
+
+                if (broker.ProveraZaduzenja(z) == z.Primerci.Count)
+                {
+                    broker.Razduzi(z);
+                }
+
+                foreach (Primerak p in z.Primerci)
+                {
+
+                    
+                    broker.RazduziPrimerak(p);
+                }
+
+               
+
+                broker.Commit();
+            }
+
             catch (Exception ex)
             {
                 broker.Rollback();

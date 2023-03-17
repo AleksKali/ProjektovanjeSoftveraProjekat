@@ -8,7 +8,6 @@ C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\bin\Debug\Apl
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\bin\Debug\Domen.pdb
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\bin\Debug\DBBroker.pdb
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.csproj.AssemblyReference.cache
-C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmDetaljiIgrice.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmDetaljiZaduzenja.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmLogin.resources
 C:\Users\SashkaBreBre\source\repos\PS_projekat\KorisnickiInterfejs\obj\Debug\KorisnickiInterfejs.FrmMain.resources

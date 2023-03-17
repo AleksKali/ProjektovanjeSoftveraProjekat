@@ -52,12 +52,6 @@
     <Compile Include="FrmDetaljiClana.Designer.cs">
       <DependentUpon>FrmDetaljiClana.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDetaljiIgrice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDetaljiIgrice.Designer.cs">
-      <DependentUpon>FrmDetaljiIgrice.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDetaljiZaduzenja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
     </Compile>
     <EmbeddedResource Include="FrmDetaljiClana.resx">
       <DependentUpon>FrmDetaljiClana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDetaljiIgrice.resx">
-      <DependentUpon>FrmDetaljiIgrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetaljiZaduzenja.resx">
       <DependentUpon>FrmDetaljiZaduzenja.cs</DependentUpon>

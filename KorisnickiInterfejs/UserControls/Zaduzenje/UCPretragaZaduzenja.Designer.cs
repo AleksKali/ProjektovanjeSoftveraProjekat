@@ -54,6 +54,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.tbClanskiBroj.Name = "tbClanskiBroj";
             this.tbClanskiBroj.Size = new System.Drawing.Size(204, 22);
             this.tbClanskiBroj.TabIndex = 15;
+            this.tbClanskiBroj.TextChanged += new System.EventHandler(this.tbClanskiBroj_TextChanged);
             // 
             // lblClanskiBroj
             // 

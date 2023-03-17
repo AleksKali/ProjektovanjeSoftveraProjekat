@@ -14,6 +14,7 @@ namespace KorisnickiInterfejs.UserControls
 {
     public partial class UCPretragaClanova : UserControl
     {
+        private Clan izabranClan;
         public UCPretragaClanova()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace KorisnickiInterfejs.UserControls
             MessageBox.Show("Član je uspešno obrisan iz baze.");
         }
 
-        private Clan izabranClan;
+        
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             if (dgvClanPretraga.SelectedRows.Count == 0)

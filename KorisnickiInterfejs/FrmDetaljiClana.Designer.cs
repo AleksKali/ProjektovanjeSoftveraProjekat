@@ -32,7 +32,7 @@ namespace KorisnickiInterfejs
             this.lblClanskiBroj = new System.Windows.Forms.Label();
             this.lblDatumUclanjenja = new System.Windows.Forms.Label();
             this.lblTrenutnaZaduzenja = new System.Windows.Forms.Label();
-            this.lblClanarina = new System.Windows.Forms.Label();
+            this.lblNemaClanarine = new System.Windows.Forms.Label();
             this.dgvTrenutnaZaduzenja = new System.Windows.Forms.DataGridView();
             this.gbUnosClana = new System.Windows.Forms.GroupBox();
             this.btnIzmeni = new System.Windows.Forms.Button();
@@ -52,6 +52,8 @@ namespace KorisnickiInterfejs
             this.lblIme = new System.Windows.Forms.Label();
             this.tbClanskiBroj = new System.Windows.Forms.TextBox();
             this.tbDatumUclanjenja = new System.Windows.Forms.TextBox();
+            this.lblClanarinaNijeIstekla = new System.Windows.Forms.Label();
+            this.lblClanarinaIstekla = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrenutnaZaduzenja)).BeginInit();
             this.gbUnosClana.SuspendLayout();
             this.SuspendLayout();
@@ -83,16 +85,16 @@ namespace KorisnickiInterfejs
             this.lblTrenutnaZaduzenja.TabIndex = 2;
             this.lblTrenutnaZaduzenja.Text = "Trenutna zaduženja člana";
             // 
-            // lblClanarina
+            // lblNemaClanarine
             // 
-            this.lblClanarina.AutoSize = true;
-            this.lblClanarina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClanarina.Location = new System.Drawing.Point(455, 75);
-            this.lblClanarina.Name = "lblClanarina";
-            this.lblClanarina.Size = new System.Drawing.Size(258, 24);
-            this.lblClanarina.TabIndex = 3;
-            this.lblClanarina.Text = "Članarina nije evidentirana";
-            this.lblClanarina.Visible = false;
+            this.lblNemaClanarine.AutoSize = true;
+            this.lblNemaClanarine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNemaClanarine.Location = new System.Drawing.Point(455, 73);
+            this.lblNemaClanarine.Name = "lblNemaClanarine";
+            this.lblNemaClanarine.Size = new System.Drawing.Size(258, 24);
+            this.lblNemaClanarine.TabIndex = 3;
+            this.lblNemaClanarine.Text = "Članarina nije evidentirana";
+            this.lblNemaClanarine.Visible = false;
             // 
             // dgvTrenutnaZaduzenja
             // 
@@ -263,16 +265,40 @@ namespace KorisnickiInterfejs
             this.tbDatumUclanjenja.Size = new System.Drawing.Size(151, 22);
             this.tbDatumUclanjenja.TabIndex = 7;
             // 
-            // DetaljiClana
+            // lblClanarinaNijeIstekla
+            // 
+            this.lblClanarinaNijeIstekla.AutoSize = true;
+            this.lblClanarinaNijeIstekla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClanarinaNijeIstekla.Location = new System.Drawing.Point(455, 75);
+            this.lblClanarinaNijeIstekla.Name = "lblClanarinaNijeIstekla";
+            this.lblClanarinaNijeIstekla.Size = new System.Drawing.Size(241, 24);
+            this.lblClanarinaNijeIstekla.TabIndex = 8;
+            this.lblClanarinaNijeIstekla.Text = "Članarina je evidentirana";
+            this.lblClanarinaNijeIstekla.Visible = false;
+            // 
+            // lblClanarinaIstekla
+            // 
+            this.lblClanarinaIstekla.AutoSize = true;
+            this.lblClanarinaIstekla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClanarinaIstekla.Location = new System.Drawing.Point(455, 73);
+            this.lblClanarinaIstekla.Name = "lblClanarinaIstekla";
+            this.lblClanarinaIstekla.Size = new System.Drawing.Size(185, 24);
+            this.lblClanarinaIstekla.TabIndex = 9;
+            this.lblClanarinaIstekla.Text = "Članarina je istekla";
+            this.lblClanarinaIstekla.Visible = false;
+            // 
+            // FrmDetaljiClana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 737);
+            this.Controls.Add(this.lblClanarinaIstekla);
+            this.Controls.Add(this.lblClanarinaNijeIstekla);
             this.Controls.Add(this.tbDatumUclanjenja);
             this.Controls.Add(this.tbClanskiBroj);
             this.Controls.Add(this.gbUnosClana);
             this.Controls.Add(this.dgvTrenutnaZaduzenja);
-            this.Controls.Add(this.lblClanarina);
+            this.Controls.Add(this.lblNemaClanarine);
             this.Controls.Add(this.lblTrenutnaZaduzenja);
             this.Controls.Add(this.lblDatumUclanjenja);
             this.Controls.Add(this.lblClanskiBroj);
@@ -291,7 +317,7 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.Label lblClanskiBroj;
         private System.Windows.Forms.Label lblDatumUclanjenja;
         private System.Windows.Forms.Label lblTrenutnaZaduzenja;
-        private System.Windows.Forms.Label lblClanarina;
+        private System.Windows.Forms.Label lblNemaClanarine;
         private System.Windows.Forms.DataGridView dgvTrenutnaZaduzenja;
         private System.Windows.Forms.GroupBox gbUnosClana;
         private System.Windows.Forms.Label lblMail;
@@ -311,5 +337,7 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.TextBox tbClanskiBroj;
         private System.Windows.Forms.TextBox tbDatumUclanjenja;
         private System.Windows.Forms.Button btnIzmeni;
+        private System.Windows.Forms.Label lblClanarinaNijeIstekla;
+        private System.Windows.Forms.Label lblClanarinaIstekla;
     }
 }

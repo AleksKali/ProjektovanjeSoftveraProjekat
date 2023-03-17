@@ -44,6 +44,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
                 return;
             }
             primerci.Add(primerak);
+
         }
 
         private void btnSacuvajZaduzenje_Click(object sender, EventArgs e)
@@ -59,8 +60,8 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
                 zaduzenje.Primerci = primerci.ToList();
                 
                 Kontroler.Instance.SacuvajZaduzenje(zaduzenje);
-                //primerci = null;
-                //dgvPrimerci.DataSource = primerci;
+                primerci.Clear();
+                dgvPrimerci.DataSource = primerci;
 
 
     }

@@ -13,5 +13,14 @@ namespace Domen
         public Clan Clan {get; set; } 
         public DateTime DatumOd { get; set; }
         public DateTime DatumDo { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Clanarina c)
+            {
+                return c.Clan.ClanskiBroj == Clan.ClanskiBroj;
+            }
+            return false;
+        }
     }
 }

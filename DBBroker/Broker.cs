@@ -221,7 +221,7 @@ namespace DBBroker
             List<ZaduzenjePrimerak> zaduzenja = new List<ZaduzenjePrimerak>();
 
             SqlCommand command = new SqlCommand("", connection);
-            command.CommandText = $"select z.Zaduzenjeid as zaduzenjeId, z.DatumZaduzenja as datumZaduzenja, z.clanskiBroj as clanskiBroj, k.ime as imeKorisnika, k.prezime as prezimeKorisnika, p.InventarskiBroj as inventarskiBroj, i.Naziv as nazivIgrice from zaduzenje z join ZaduzenjePrimerak zp on (z.ZaduzenjeID=zp.ZaduzenjeID) join Primerak p on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join Igrica i on (p.IgricaID=i.IgricaID) join korisnik k on (z.korisnikId=k.korisnikId) where z.clanskiBroj={clanskiBroj} and z.DatumRazduzenja IS NULL and p.izdat=1";
+            command.CommandText = $"select c.ime as imeClana, c.prezime as prezimeClana, c.clanskiBroj as clanskiBroj, z.Zaduzenjeid as zaduzenjeId, z.DatumZaduzenja as datumZaduzenja, k.ime as imeKorisnika, k.prezime as prezimeKorisnika, p.InventarskiBroj as inventarskiBroj, i.Naziv as nazivIgrice from Clan c join zaduzenje z on (c.clanskiBroj = z.ClanskiBroj) join ZaduzenjePrimerak zp on (z.ZaduzenjeID=zp.ZaduzenjeID) join Primerak p on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join Igrica i on (p.IgricaID=i.IgricaID) join korisnik k on (z.korisnikId=k.korisnikId) where z.clanskiBroj={clanskiBroj} and z.DatumRazduzenja IS NULL and p.Izdat=1";
 
 
             using (SqlDataReader reader = command.ExecuteReader())
@@ -233,7 +233,12 @@ namespace DBBroker
 
                         ZaduzenjeId = (int)reader["zaduzenjeId"],
                         DatumZaduzenja = (DateTime)reader["datumZaduzenja"],
-                        Clan = new Clan { ClanskiBroj = (int)reader["clanskiBroj"] }, //nije gotova fja
+                        Clan = new Clan
+                        {
+                            Ime = (string)reader["imeClana"],
+                            Prezime = (string)reader["prezimeClana"],
+                            ClanskiBroj = (int)reader["clanskiBroj"]
+                        },
                         NazivIgrice = (string)reader["nazivIgrice"],
                         InventarskiBrojPrimerka = (int)reader["inventarskiBroj"],
                         Korisnik = new Korisnik
@@ -427,7 +432,7 @@ namespace DBBroker
             List<Igrica> igrice = new List<Igrica>();
 
             SqlCommand command = new SqlCommand("", connection);
-            command.CommandText = $"SELECT i.igricaid as igricaId, i.naziv as nazivIgrice, p.proizvodjacid as proizvodjacId, p.naziv as proizvodjacNaziv FROM Igrica i join proizvodjac p on (i.proizvodjacid=p.proizvodjacid)";
+            command.CommandText = $"SELECT i.igricaid as igricaId, i.naziv as nazivIgrice, p.proizvodjacid as proizvodjacId, p.naziv as proizvodjacNaziv FROM Igrica i join proizvodjac p on (i.proizvodjacid=p.proizvodjacid) join primerak pr on (i.igricaId=pr.igricaId) where pr.izdat=0 group by i.igricaid, i.naziv, p.proizvodjacid, p.naziv";
 
             using (SqlDataReader reader = command.ExecuteReader())
             {

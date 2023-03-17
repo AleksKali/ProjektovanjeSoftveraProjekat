@@ -56,6 +56,30 @@ namespace AplikacionaLogika
         {
             return igricaRepozitorijum.VratiPrimerkeZaduzenja(zaduzenjeId);
         }
+
+        public void StatusClanarine(Label lblNemaClanarine, Label lblClanarinaIstekla, Label lblClanarinaNijeIstekla, Clan c)
+        {
+            List<Clanarina> lista = clanarinaRepozitorijum.VratiClanarine();
+
+            foreach (Clanarina cla in lista)
+            {
+                if (cla.Clan.ClanskiBroj == c.ClanskiBroj)
+                {
+                    if (cla.DatumDo > DateTime.Now)
+                    {
+                        lblClanarinaNijeIstekla.Visible = true;
+                        return;
+                    }
+                    else
+                    {
+                        lblClanarinaIstekla.Visible = true;
+                        return;
+                    }
+                }
+            }
+            lblNemaClanarine.Visible = true;
+        }
+
         public List<ZaduzenjePrimerak> VratiZaduzenja()
         {
             return zaduzenjeRepozitorijum.VratiZaduzenja();
@@ -102,32 +126,53 @@ namespace AplikacionaLogika
             }
 
             List < Clanarina > clanarine = clanarinaRepozitorijum.VratiClanarine();
-            foreach (Clanarina cl in clanarine)
+            if (clanarine.Contains(c))
             {
-                if(cl.Clan.ClanskiBroj == c.Clan.ClanskiBroj)
+                foreach (Clanarina cl in clanarine)
                 {
-                    if(cl.DatumDo > c.DatumOd)
+                    if (cl.Clan.ClanskiBroj == c.Clan.ClanskiBroj)
                     {
-                        MessageBox.Show("Clanarina istice" + cl.DatumDo + ". Promenite datum od.");
-                        return;
-                    }
-                    else
-                    {
-                        try
+                        if (cl.DatumDo > c.DatumOd)
                         {
-                            clanarinaRepozitorijum.IzbrisiClanarinu(cl);
-                            clanarinaRepozitorijum.SacuvajClanarinu(c);
-                            MessageBox.Show("Clanarina uspesno sacuvana!");
+
+                            MessageBox.Show("Clanarina istice tek " + cl.DatumDo.ToShortDateString() + ". Sledecu clanarinu evidentirajte nakon tog datuma.");
+                            return;
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("Greska pri skladistenju u bazu. ");
-                            Debug.WriteLine(">>>>>>>>> " + ex.Message);
+                            try
+                            {
+
+                                clanarinaRepozitorijum.IzbrisiClanarinu(cl);
+                                clanarinaRepozitorijum.SacuvajClanarinu(c);
+                                MessageBox.Show("Clanarina uspesno sacuvana!");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Greska pri skladistenju u bazu. ");
+                                Debug.WriteLine(">>>>>>>>> " + ex.Message);
+                            }
+
                         }
-                        
                     }
+
                 }
             }
+            else
+            {
+                try
+                {
+
+                    clanarinaRepozitorijum.SacuvajClanarinu(c);
+                    MessageBox.Show("Clanarina uspesno sacuvana!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Greska pri skladistenju u bazu. ");
+                    Debug.WriteLine(">>>>>>>>> " + ex.Message);
+                }
+            }
+           
 
 
             
@@ -201,8 +246,11 @@ namespace AplikacionaLogika
         }
         public List<Igrica> VratiIgrice()
         {
-            List<Igrica> igrice = igricaRepozitorijum.VratiIgrice();
-            return igrice;
+           
+                List<Igrica> igrice = igricaRepozitorijum.VratiIgrice();
+                return igrice;
+           
+           
         }
 
         public List<Clanarina> VratiClanarine()

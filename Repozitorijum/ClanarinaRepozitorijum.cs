@@ -31,24 +31,7 @@ namespace Repozitorijum
             }
         }
 
-        public DateTime VratiDatumDoClanarine(Clan c)
-        {
-            try
-            {
-                broker.OpenConnection();
-                return broker.VratiDatumDoClanarine(c);
-            }
-
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-            finally
-            {
-                broker.CloseConnection();
-            }
-        }
+        
 
         public void SacuvajClanarinu(Clanarina c)
         {

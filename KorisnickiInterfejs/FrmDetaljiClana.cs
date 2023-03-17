@@ -29,6 +29,7 @@ namespace KorisnickiInterfejs
             {
                 dgvTrenutnaZaduzenja.DataSource = Kontroler.Instance.VratiZaduzenjaClana(c.ClanskiBroj);
                 dgvTrenutnaZaduzenja.ReadOnly = true;
+                dgvTrenutnaZaduzenja.Columns[1].Visible = false;
 
                 tbClanskiBroj.ReadOnly = true;
                 tbDatumUclanjenja.ReadOnly = true;
@@ -42,7 +43,7 @@ namespace KorisnickiInterfejs
                 tbUlica.Text = c.Ulica;
                 tbBroj.Text = c.BrojUlice;
                 tbMail.Text = c.Mail;
-                //lblClanarina.Text = Kontroler.Instance.StatusClanarine
+                Kontroler.Instance.StatusClanarine(lblNemaClanarine, lblClanarinaIstekla, lblClanarinaNijeIstekla, c);
 
             }
             catch (Exception ex)
@@ -75,5 +76,6 @@ namespace KorisnickiInterfejs
 
 
         }
+
     }
 }

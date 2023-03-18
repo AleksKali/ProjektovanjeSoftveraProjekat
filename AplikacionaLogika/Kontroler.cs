@@ -4,6 +4,7 @@ using Repozitorijum;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,44 @@ namespace AplikacionaLogika
                 return instance;
             }
         }
-        
-    
+
+        public bool ValidacijaClana(TextBox tbIme, TextBox tbPrezime, TextBox tbJMBG)
+        {
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(tbIme.Text))
+            {
+                tbIme.BackColor = Color.Salmon;
+                valid = false;
+            }
+            else
+            {
+                tbIme.BackColor = Color.White;
+            }
+
+            if (string.IsNullOrEmpty(tbPrezime.Text))
+            {
+                tbPrezime.BackColor = Color.Salmon;
+                valid = false;
+            }
+            else
+            {
+                tbPrezime.BackColor = Color.White;
+            }
+            if (string.IsNullOrEmpty(tbJMBG.Text))
+            {
+                tbJMBG.BackColor = Color.Salmon;
+                valid = false;
+            }
+            else
+            {
+                tbJMBG.BackColor = Color.White;
+            }
+
+            return valid;
+        }
+
+
 
 
 

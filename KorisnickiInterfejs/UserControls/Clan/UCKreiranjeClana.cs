@@ -21,6 +21,11 @@ namespace KorisnickiInterfejs.UserControls
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
+            if (!Kontroler.Instance.ValidacijaClana(tbIme,tbPrezime, tbJMBG)){
+                return;
+            }
+
+
             Clan clan = new Clan();
             clan.Ime = tbIme.Text;
             clan.Prezime = tbPrezime.Text;
@@ -29,8 +34,18 @@ namespace KorisnickiInterfejs.UserControls
             clan.BrojUlice = tbBroj.Text;
             clan.Jmbg = tbJMBG.Text;
             clan.Kontakt = tbKontakt.Text;
+
+           
             int id= Kontroler.Instance.DodajClana(clan);
             MessageBox.Show("Uspešno ste kreirali člana " + clan.Ime + " " + clan.Prezime+" sa članskim brojem: "+id);
+
+            foreach (Control control in gbDodajClana.Controls)
+            {
+                if(control is TextBox)
+                {
+                    control.ResetText();
+                }
+            }
 
         }
 

@@ -44,6 +44,8 @@ namespace KorisnickiInterfejs.UserControls
             this.lblJMBG = new System.Windows.Forms.Label();
             this.lblPrezime = new System.Windows.Forms.Label();
             this.lblIme = new System.Windows.Forms.Label();
+            this.gbDodajClana = new System.Windows.Forms.GroupBox();
+            this.gbDodajClana.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSacuvaj
@@ -60,7 +62,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbBroj
             // 
             this.tbBroj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbBroj.Location = new System.Drawing.Point(198, 411);
+            this.tbBroj.Location = new System.Drawing.Point(179, 351);
             this.tbBroj.Name = "tbBroj";
             this.tbBroj.Size = new System.Drawing.Size(242, 22);
             this.tbBroj.TabIndex = 45;
@@ -68,7 +70,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbUlica
             // 
             this.tbUlica.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbUlica.Location = new System.Drawing.Point(198, 358);
+            this.tbUlica.Location = new System.Drawing.Point(179, 298);
             this.tbUlica.Name = "tbUlica";
             this.tbUlica.Size = new System.Drawing.Size(242, 22);
             this.tbUlica.TabIndex = 44;
@@ -76,7 +78,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbMail
             // 
             this.tbMail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbMail.Location = new System.Drawing.Point(198, 307);
+            this.tbMail.Location = new System.Drawing.Point(179, 247);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(242, 22);
             this.tbMail.TabIndex = 43;
@@ -84,7 +86,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbKontakt
             // 
             this.tbKontakt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbKontakt.Location = new System.Drawing.Point(198, 259);
+            this.tbKontakt.Location = new System.Drawing.Point(179, 199);
             this.tbKontakt.Name = "tbKontakt";
             this.tbKontakt.Size = new System.Drawing.Size(242, 22);
             this.tbKontakt.TabIndex = 42;
@@ -92,7 +94,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbJMBG
             // 
             this.tbJMBG.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbJMBG.Location = new System.Drawing.Point(198, 210);
+            this.tbJMBG.Location = new System.Drawing.Point(179, 150);
             this.tbJMBG.Name = "tbJMBG";
             this.tbJMBG.Size = new System.Drawing.Size(242, 22);
             this.tbJMBG.TabIndex = 41;
@@ -100,7 +102,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbPrezime
             // 
             this.tbPrezime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPrezime.Location = new System.Drawing.Point(198, 157);
+            this.tbPrezime.Location = new System.Drawing.Point(179, 97);
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(242, 22);
             this.tbPrezime.TabIndex = 40;
@@ -108,7 +110,7 @@ namespace KorisnickiInterfejs.UserControls
             // tbIme
             // 
             this.tbIme.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbIme.Location = new System.Drawing.Point(198, 104);
+            this.tbIme.Location = new System.Drawing.Point(179, 44);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(242, 22);
             this.tbIme.TabIndex = 39;
@@ -117,7 +119,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblBrojUlice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblBrojUlice.AutoSize = true;
-            this.lblBrojUlice.Location = new System.Drawing.Point(62, 416);
+            this.lblBrojUlice.Location = new System.Drawing.Point(43, 356);
             this.lblBrojUlice.Name = "lblBrojUlice";
             this.lblBrojUlice.Size = new System.Drawing.Size(37, 17);
             this.lblBrojUlice.TabIndex = 36;
@@ -127,7 +129,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblUlica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUlica.AutoSize = true;
-            this.lblUlica.Location = new System.Drawing.Point(62, 358);
+            this.lblUlica.Location = new System.Drawing.Point(43, 298);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(43, 17);
             this.lblUlica.TabIndex = 35;
@@ -137,7 +139,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblMail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(62, 307);
+            this.lblMail.Location = new System.Drawing.Point(43, 247);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(37, 17);
             this.lblMail.TabIndex = 34;
@@ -147,7 +149,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblKontakt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblKontakt.AutoSize = true;
-            this.lblKontakt.Location = new System.Drawing.Point(62, 259);
+            this.lblKontakt.Location = new System.Drawing.Point(43, 199);
             this.lblKontakt.Name = "lblKontakt";
             this.lblKontakt.Size = new System.Drawing.Size(60, 17);
             this.lblKontakt.TabIndex = 33;
@@ -157,7 +159,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblJMBG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblJMBG.AutoSize = true;
-            this.lblJMBG.Location = new System.Drawing.Point(62, 210);
+            this.lblJMBG.Location = new System.Drawing.Point(43, 150);
             this.lblJMBG.Name = "lblJMBG";
             this.lblJMBG.Size = new System.Drawing.Size(50, 17);
             this.lblJMBG.TabIndex = 32;
@@ -167,7 +169,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblPrezime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrezime.AutoSize = true;
-            this.lblPrezime.Location = new System.Drawing.Point(62, 157);
+            this.lblPrezime.Location = new System.Drawing.Point(43, 97);
             this.lblPrezime.Name = "lblPrezime";
             this.lblPrezime.Size = new System.Drawing.Size(63, 17);
             this.lblPrezime.TabIndex = 31;
@@ -177,36 +179,47 @@ namespace KorisnickiInterfejs.UserControls
             // 
             this.lblIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIme.AutoSize = true;
-            this.lblIme.Location = new System.Drawing.Point(62, 104);
+            this.lblIme.Location = new System.Drawing.Point(43, 44);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(34, 17);
             this.lblIme.TabIndex = 30;
             this.lblIme.Text = "Ime:";
             // 
+            // gbDodajClana
+            // 
+            this.gbDodajClana.Controls.Add(this.tbBroj);
+            this.gbDodajClana.Controls.Add(this.tbUlica);
+            this.gbDodajClana.Controls.Add(this.tbMail);
+            this.gbDodajClana.Controls.Add(this.tbKontakt);
+            this.gbDodajClana.Controls.Add(this.tbJMBG);
+            this.gbDodajClana.Controls.Add(this.tbPrezime);
+            this.gbDodajClana.Controls.Add(this.tbIme);
+            this.gbDodajClana.Controls.Add(this.lblBrojUlice);
+            this.gbDodajClana.Controls.Add(this.lblUlica);
+            this.gbDodajClana.Controls.Add(this.lblMail);
+            this.gbDodajClana.Controls.Add(this.lblKontakt);
+            this.gbDodajClana.Controls.Add(this.lblJMBG);
+            this.gbDodajClana.Controls.Add(this.lblPrezime);
+            this.gbDodajClana.Controls.Add(this.lblIme);
+            this.gbDodajClana.Location = new System.Drawing.Point(19, 60);
+            this.gbDodajClana.Name = "gbDodajClana";
+            this.gbDodajClana.Size = new System.Drawing.Size(484, 407);
+            this.gbDodajClana.TabIndex = 47;
+            this.gbDodajClana.TabStop = false;
+            this.gbDodajClana.Text = "Unesite podatke za člana";
+            // 
             // UCKreiranjeClana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbDodajClana);
             this.Controls.Add(this.btnSacuvaj);
-            this.Controls.Add(this.tbBroj);
-            this.Controls.Add(this.tbUlica);
-            this.Controls.Add(this.tbMail);
-            this.Controls.Add(this.tbKontakt);
-            this.Controls.Add(this.tbJMBG);
-            this.Controls.Add(this.tbPrezime);
-            this.Controls.Add(this.tbIme);
-            this.Controls.Add(this.lblBrojUlice);
-            this.Controls.Add(this.lblUlica);
-            this.Controls.Add(this.lblMail);
-            this.Controls.Add(this.lblKontakt);
-            this.Controls.Add(this.lblJMBG);
-            this.Controls.Add(this.lblPrezime);
-            this.Controls.Add(this.lblIme);
             this.Name = "UCKreiranjeClana";
             this.Size = new System.Drawing.Size(531, 594);
             this.Load += new System.EventHandler(this.UCKreiranjeClana_Load);
+            this.gbDodajClana.ResumeLayout(false);
+            this.gbDodajClana.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -227,5 +240,6 @@ namespace KorisnickiInterfejs.UserControls
         private System.Windows.Forms.Label lblJMBG;
         private System.Windows.Forms.Label lblPrezime;
         private System.Windows.Forms.Label lblIme;
+        private System.Windows.Forms.GroupBox gbDodajClana;
     }
 }

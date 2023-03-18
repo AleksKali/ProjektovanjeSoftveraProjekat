@@ -36,9 +36,11 @@ namespace KorisnickiInterfejs.UserControls
             izabranClan = (Clan)dgvClanPretraga.SelectedRows[0].DataBoundItem;
             Kontroler.Instance.ObrisiClana(izabranClan);
             MessageBox.Show("Član je uspešno obrisan iz baze.");
+            dgvClanPretraga.DataSource = Kontroler.Instance.VratiClanove();
+
         }
 
-        
+
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             if (dgvClanPretraga.SelectedRows.Count == 0)
@@ -56,19 +58,13 @@ namespace KorisnickiInterfejs.UserControls
             {
                 MessageBox.Show("Uspesno ste izmenili podatke o clanu!");
             }
-           
-            /*tbClanskiBroj.Text = izabranClan.ClanskiBroj.ToString();
-            tbDatumUclanjenja.Text
 
-            txtId.Text = selectedProduct.ProductId.ToString();
-            txtDescription.Text = selectedProduct.Description.ToString();
-            txtName.Text = selectedProduct.Name.ToString();
-            txtPrice.Text = selectedProduct.Price.ToString();*/
-            dgvClanPretraga.Refresh();
+            
+            dgvClanPretraga.DataSource = Kontroler.Instance.VratiClanove();
         }
-      
 
-        
+
+
 
         private void tbImeClana_TextChanged(object sender, EventArgs e)
         {

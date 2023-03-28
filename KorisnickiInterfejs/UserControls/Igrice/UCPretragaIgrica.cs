@@ -1,5 +1,6 @@
-﻿using AplikacionaLogika;
+﻿
 using Domen;
+using KorisnickiInterfejs.KontrolerKI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,17 @@ namespace KorisnickiInterfejs.UserControls.Igrice
 {
     public partial class UCPretragaIgrica : UserControl
     {
+        private PretragaIgricaKontroler kontroler;
 
         private BindingList<Igrica> igrice = new BindingList<Igrica>();
         public UCPretragaIgrica()
         {
             InitializeComponent();
-            Init();
+            kontroler = new PretragaIgricaKontroler(this);
+            kontroler.Init();
             
         }
-        public void Init()
+       /* public void Init()
         {
             try
             {
@@ -35,20 +38,7 @@ namespace KorisnickiInterfejs.UserControls.Igrice
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void tbImeIgrice_TextChanged(object sender, EventArgs e)
-        {
-            string ime = tbImeIgrice.Text;
-            try
-            {
-                igrice = new BindingList<Igrica>(Kontroler.Instance.VratiIgrice(ime));
-                dgvPretragaIgrica.DataSource = igrice;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        }*/
+        
     }
 }

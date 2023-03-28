@@ -1,0 +1,6 @@
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Common.Komunikacija\bin\Debug\Common.Komunikacija.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Common.Komunikacija\bin\Debug\Common.Komunikacija.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Common.Komunikacija\obj\Debug\Common.Komunikacija.csproj.AssemblyReference.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Common.Komunikacija\obj\Debug\Common.Komunikacija.csproj.CoreCompileInputs.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Common.Komunikacija\obj\Debug\Common.Komunikacija.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Common.Komunikacija\obj\Debug\Common.Komunikacija.pdb

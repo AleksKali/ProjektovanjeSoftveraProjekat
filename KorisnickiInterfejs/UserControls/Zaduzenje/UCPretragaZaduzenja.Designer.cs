@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs.UserControls.Zaduzenje
 {
     partial class UCPretragaZaduzenja
@@ -46,7 +48,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.btnPronadjiZaduzenja.TabIndex = 16;
             this.btnPronadjiZaduzenja.Text = "Pronađi zaduženja";
             this.btnPronadjiZaduzenja.UseVisualStyleBackColor = true;
-            this.btnPronadjiZaduzenja.Click += new System.EventHandler(this.btnPronadjiZaduzenja_Click);
             // 
             // tbClanskiBroj
             // 
@@ -54,7 +55,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.tbClanskiBroj.Name = "tbClanskiBroj";
             this.tbClanskiBroj.Size = new System.Drawing.Size(204, 22);
             this.tbClanskiBroj.TabIndex = 15;
-            this.tbClanskiBroj.TextChanged += new System.EventHandler(this.tbClanskiBroj_TextChanged);
             // 
             // lblClanskiBroj
             // 
@@ -73,7 +73,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.btnDetalji.TabIndex = 13;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = true;
-            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // btnRazduzi
             // 
@@ -83,7 +82,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.btnRazduzi.TabIndex = 12;
             this.btnRazduzi.Text = "Razduži";
             this.btnRazduzi.UseVisualStyleBackColor = true;
-            this.btnRazduzi.Click += new System.EventHandler(this.btnRazduzi_Click);
             // 
             // dgvZaduzenja
             // 
@@ -121,5 +119,12 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         private System.Windows.Forms.Button btnDetalji;
         private System.Windows.Forms.Button btnRazduzi;
         private System.Windows.Forms.DataGridView dgvZaduzenja;
+
+        public Button BtnPronadjiZaduzenja { get => btnPronadjiZaduzenja; set => btnPronadjiZaduzenja = value; }
+        public TextBox TbClanskiBroj { get => tbClanskiBroj; set => tbClanskiBroj = value; }
+        public Label LblClanskiBroj { get => lblClanskiBroj; set => lblClanskiBroj = value; }
+        public Button BtnDetalji { get => btnDetalji; set => btnDetalji = value; }
+        public Button BtnRazduzi { get => btnRazduzi; set => btnRazduzi = value; }
+        public DataGridView DgvZaduzenja { get => dgvZaduzenja; set => dgvZaduzenja = value; }
     }
 }

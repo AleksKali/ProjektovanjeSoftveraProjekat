@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs.UserControls
 {
     partial class UCKreiranjeClana
@@ -57,7 +59,6 @@ namespace KorisnickiInterfejs.UserControls
             this.btnSacuvaj.TabIndex = 46;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
-            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // tbBroj
             // 
@@ -216,7 +217,6 @@ namespace KorisnickiInterfejs.UserControls
             this.Controls.Add(this.btnSacuvaj);
             this.Name = "UCKreiranjeClana";
             this.Size = new System.Drawing.Size(531, 594);
-            this.Load += new System.EventHandler(this.UCKreiranjeClana_Load);
             this.gbDodajClana.ResumeLayout(false);
             this.gbDodajClana.PerformLayout();
             this.ResumeLayout(false);
@@ -241,5 +241,22 @@ namespace KorisnickiInterfejs.UserControls
         private System.Windows.Forms.Label lblPrezime;
         private System.Windows.Forms.Label lblIme;
         private System.Windows.Forms.GroupBox gbDodajClana;
+
+        public Button BtnSacuvaj { get => btnSacuvaj; set => btnSacuvaj = value; }
+        public TextBox TbBroj { get => tbBroj; set => tbBroj = value; }
+        public TextBox TbUlica { get => tbUlica; set => tbUlica = value; }
+        public TextBox TbMail { get => tbMail; set => tbMail = value; }
+        public TextBox TbKontakt { get => tbKontakt; set => tbKontakt = value; }
+        public TextBox TbJMBG { get => tbJMBG; set => tbJMBG = value; }
+        public TextBox TbPrezime { get => tbPrezime; set => tbPrezime = value; }
+        public TextBox TbIme { get => tbIme; set => tbIme = value; }
+        public Label LblBrojUlice { get => lblBrojUlice; set => lblBrojUlice = value; }
+        public Label LblUlica { get => lblUlica; set => lblUlica = value; }
+        public Label LblMail { get => lblMail; set => lblMail = value; }
+        public Label LblKontakt { get => lblKontakt; set => lblKontakt = value; }
+        public Label LblJMBG { get => lblJMBG; set => lblJMBG = value; }
+        public Label LblPrezime { get => lblPrezime; set => lblPrezime = value; }
+        public Label LblIme { get => lblIme; set => lblIme = value; }
+        public GroupBox GbDodajClana { get => gbDodajClana; set => gbDodajClana = value; }
     }
 }

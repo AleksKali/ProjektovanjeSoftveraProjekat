@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs.UserControls.Igrice
 {
     partial class UCPretragaIgrica
@@ -53,7 +55,6 @@ namespace KorisnickiInterfejs.UserControls.Igrice
             this.tbImeIgrice.Name = "tbImeIgrice";
             this.tbImeIgrice.Size = new System.Drawing.Size(204, 22);
             this.tbImeIgrice.TabIndex = 13;
-            this.tbImeIgrice.TextChanged += new System.EventHandler(this.tbImeIgrice_TextChanged);
             // 
             // lblimeIgrice
             // 
@@ -85,5 +86,9 @@ namespace KorisnickiInterfejs.UserControls.Igrice
         private System.Windows.Forms.DataGridView dgvPretragaIgrica;
         private System.Windows.Forms.TextBox tbImeIgrice;
         private System.Windows.Forms.Label lblimeIgrice;
+
+        public DataGridView DgvPretragaIgrica { get => dgvPretragaIgrica; set => dgvPretragaIgrica = value; }
+        public TextBox TbImeIgrice { get => tbImeIgrice; set => tbImeIgrice = value; }
+        public Label LblimeIgrice { get => lblimeIgrice; set => lblimeIgrice = value; }
     }
 }

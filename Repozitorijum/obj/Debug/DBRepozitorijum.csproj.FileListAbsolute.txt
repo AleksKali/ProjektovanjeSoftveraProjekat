@@ -1,0 +1,11 @@
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\bin\Debug\Repozitorijum.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\bin\Debug\Repozitorijum.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\bin\Debug\DBBroker.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\bin\Debug\Domen.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\bin\Debug\DBBroker.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\bin\Debug\Domen.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\obj\Debug\DBRepozitorijum.csproj.AssemblyReference.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\obj\Debug\DBRepozitorijum.csproj.CoreCompileInputs.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\obj\Debug\DBRepozitorijum.csproj.CopyComplete
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\obj\Debug\Repozitorijum.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Repozitorijum\obj\Debug\Repozitorijum.pdb

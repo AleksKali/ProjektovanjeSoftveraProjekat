@@ -1,0 +1,13 @@
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.csproj.AssemblyReference.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.csproj.CoreCompileInputs.cache
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\Server.SistemskeOperacije.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\Server.SistemskeOperacije.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\Domen.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\Repozitorijum.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\DBBroker.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\Domen.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\Repozitorijum.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\bin\Debug\DBBroker.pdb
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.csproj.CopyComplete
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.dll
+C:\Users\SashkaBreBre\source\repos\PS_projekat\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.pdb

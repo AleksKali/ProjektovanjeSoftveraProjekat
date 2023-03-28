@@ -1,5 +1,6 @@
-﻿using AplikacionaLogika;
+﻿
 using Domen;
+using KorisnickiInterfejs.KontrolerKI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +15,17 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
 {
     public partial class UCPretragaZaduzenja : UserControl
     {
-        private BindingList<ZaduzenjePrimerak> zaduzenja = new BindingList<ZaduzenjePrimerak>();
-        private ZaduzenjePrimerak izabranoZaduzenje = new ZaduzenjePrimerak();
+        //private BindingList<ZaduzenjePrimerak> zaduzenja = new BindingList<ZaduzenjePrimerak>();
+        //private ZaduzenjePrimerak izabranoZaduzenje = new ZaduzenjePrimerak();
+        private PretragaZaduzenjaKontroler kontroler;
         public UCPretragaZaduzenja()
         {
             InitializeComponent();
-            Init();
+            kontroler = new PretragaZaduzenjaKontroler(this);
+            kontroler.Init();
+           // Init();
         }
-
+        /*
         private void Init()
         {
             zaduzenja = new BindingList<ZaduzenjePrimerak>(Kontroler.Instance.VratiZaduzenja()); //ne radi mi osvezavanje automatsko
@@ -32,7 +36,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         {
             Clan c = new Clan();
             c.ClanskiBroj = int.Parse(tbClanskiBroj.Text);
-            zaduzenja = new BindingList<ZaduzenjePrimerak>(Kontroler.Instance.VratiZaduzenjaClana(c.ClanskiBroj));
+            zaduzenja = new BindingList<ZaduzenjePrimerak>(Kontroler.Instance.VratiZaduzenjaClana(c));
             dgvZaduzenja.DataSource = zaduzenja;
         }
 
@@ -78,13 +82,13 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             }
             dgvZaduzenja.DataSource = Kontroler.Instance.VratiZaduzenja();
 
-            /*tbClanskiBroj.Text = izabranClan.ClanskiBroj.ToString();
-            tbDatumUclanjenja.Text
+            //tbClanskiBroj.Text = izabranClan.ClanskiBroj.ToString();
+            //tbDatumUclanjenja.Text
 
-            txtId.Text = selectedProduct.ProductId.ToString();
-            txtDescription.Text = selectedProduct.Description.ToString();
-            txtName.Text = selectedProduct.Name.ToString();
-            txtPrice.Text = selectedProduct.Price.ToString();*/
+            //txtId.Text = selectedProduct.ProductId.ToString();
+            //txtDescription.Text = selectedProduct.Description.ToString();
+            //txtName.Text = selectedProduct.Name.ToString();
+            //txtPrice.Text = selectedProduct.Price.ToString();
             
             //dgvClanPretraga.Refresh();
         }
@@ -93,6 +97,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         {
             dgvZaduzenja.DataSource = Kontroler.Instance.VratiZaduzenja();
 
-        }
+        }*/
     }
 }

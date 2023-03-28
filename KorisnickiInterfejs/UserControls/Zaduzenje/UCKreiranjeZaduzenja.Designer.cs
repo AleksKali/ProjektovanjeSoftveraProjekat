@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs.UserControls.Zaduzenje
 {
     partial class UCKreiranjeZaduzenja
@@ -55,7 +57,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.btnSacuvajZaduzenje.TabIndex = 8;
             this.btnSacuvajZaduzenje.Text = "Sačuvaj";
             this.btnSacuvajZaduzenje.UseVisualStyleBackColor = true;
-            this.btnSacuvajZaduzenje.Click += new System.EventHandler(this.btnSacuvajZaduzenje_Click);
             // 
             // gbIgrica
             // 
@@ -79,7 +80,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.cbIgrica.Name = "cbIgrica";
             this.cbIgrica.Size = new System.Drawing.Size(189, 24);
             this.cbIgrica.TabIndex = 7;
-            this.cbIgrica.SelectedIndexChanged += new System.EventHandler(this.cbIgrica_SelectedIndexChanged);
             // 
             // cbPrimerak
             // 
@@ -115,7 +115,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.btnSacuvajIgricu.TabIndex = 0;
             this.btnSacuvajIgricu.Text = "OK";
             this.btnSacuvajIgricu.UseVisualStyleBackColor = true;
-            this.btnSacuvajIgricu.Click += new System.EventHandler(this.btnSacuvajIgricu_Click);
             // 
             // lblClan
             // 
@@ -158,7 +157,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.btnIzbrisiRed.TabIndex = 17;
             this.btnIzbrisiRed.Text = "Izbrisi red";
             this.btnIzbrisiRed.UseVisualStyleBackColor = true;
-            this.btnIzbrisiRed.Click += new System.EventHandler(this.btnIzbrisiRed_Click);
             // 
             // dgvPrimerci
             // 
@@ -217,5 +215,19 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         private System.Windows.Forms.Button btnIzbrisiRed;
         private System.Windows.Forms.DataGridView dgvPrimerci;
         private System.Windows.Forms.Label lblGreska;
+
+        public Button BtnSacuvajZaduzenje { get => btnSacuvajZaduzenje; set => btnSacuvajZaduzenje = value; }
+        public GroupBox GbIgrica { get => gbIgrica; set => gbIgrica = value; }
+        public ComboBox CbIgrica { get => cbIgrica; set => cbIgrica = value; }
+        public ComboBox CbPrimerak { get => cbPrimerak; set => cbPrimerak = value; }
+        public Label LblPrimerak { get => lblPrimerak; set => lblPrimerak = value; }
+        public Label LblIgrica { get => lblIgrica; set => lblIgrica = value; }
+        public Button BtnSacuvajIgricu { get => btnSacuvajIgricu; set => btnSacuvajIgricu = value; }
+        public Label LblClan { get => lblClan; set => lblClan = value; }
+        public ComboBox CbClan { get => cbClan; set => cbClan = value; }
+        public Label LblError { get => lblError; set => lblError = value; }
+        public Button BtnIzbrisiRed { get => btnIzbrisiRed; set => btnIzbrisiRed = value; }
+        public DataGridView DgvPrimerci { get => dgvPrimerci; set => dgvPrimerci = value; }
+        public Label LblGreska { get => lblGreska; set => lblGreska = value; }
     }
 }

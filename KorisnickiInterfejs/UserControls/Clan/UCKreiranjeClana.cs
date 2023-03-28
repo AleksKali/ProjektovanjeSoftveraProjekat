@@ -1,5 +1,6 @@
-﻿using AplikacionaLogika;
+﻿
 using Domen;
+using KorisnickiInterfejs.KontrolerKI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,15 @@ namespace KorisnickiInterfejs.UserControls
 {
     public partial class UCKreiranjeClana : UserControl
     {
+        private KreirajClanaKontroler kontroler;
         public UCKreiranjeClana()
         {
             InitializeComponent();
+            kontroler = new KreirajClanaKontroler(this);
+            kontroler.Init();
         }
-
-        private void btnSacuvaj_Click(object sender, EventArgs e)
+        
+       /* private void btnSacuvaj_Click(object sender, EventArgs e)
         {
             if (!Kontroler.Instance.ValidacijaClana(tbIme,tbPrezime, tbJMBG)){
                 return;
@@ -47,11 +51,8 @@ namespace KorisnickiInterfejs.UserControls
                 }
             }
 
-        }
+        }*/
 
-        private void UCKreiranjeClana_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

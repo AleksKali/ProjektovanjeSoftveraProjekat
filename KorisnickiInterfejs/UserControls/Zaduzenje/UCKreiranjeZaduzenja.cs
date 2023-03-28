@@ -1,5 +1,6 @@
-﻿using AplikacionaLogika;
+﻿
 using Domen;
+using KorisnickiInterfejs.KontrolerKI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,18 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
 {
     public partial class UCKreiranjeZaduzenja : UserControl
     {
-        private BindingList<Primerak> primerci = new BindingList<Primerak>();
-        private Domen.Zaduzenje zaduzenje = new Domen.Zaduzenje();
+        //private BindingList<Primerak> primerci = new BindingList<Primerak>();
+        //private Domen.Zaduzenje zaduzenje = new Domen.Zaduzenje();
+
+        private KreirajZaduzenjeKontroler kontroler;
 
         public UCKreiranjeZaduzenja()
         {
             InitializeComponent();
-            Init();
+            kontroler = new KreirajZaduzenjeKontroler(this);
+            kontroler.Init();
         }
-
+        /*
         private void Init()
         {
             cbIgrica.DataSource = Kontroler.Instance.VratiIgrice();
@@ -88,9 +92,15 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
 
         private void btnIzbrisiRed_Click(object sender, EventArgs e)
         {
+            if (dgvPrimerci.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste odabrali red!");
+                return;
+            }
+
             Primerak izabranPrimerak = (Primerak)dgvPrimerci.SelectedRows[0].DataBoundItem;
             primerci.Remove(izabranPrimerak);
-        }
+        }*/
 
     }
 }

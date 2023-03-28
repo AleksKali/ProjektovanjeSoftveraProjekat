@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs.UserControls.Clanarina
 {
     partial class UCEvidentiranjeClanarine
@@ -89,7 +91,6 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.btnSacuvaj.TabIndex = 4;
             this.btnSacuvaj.Text = "Sačuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
-            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // label3
             // 
@@ -174,5 +175,16 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDatumDo;
         private System.Windows.Forms.DateTimePicker dtpDatumOd;
+
+        public GroupBox GroupBox1 { get => groupBox1; set => groupBox1 = value; }
+        public ComboBox CbIzborClana { get => cbIzborClana; set => cbIzborClana = value; }
+        public Label Label4 { get => label4; set => label4 = value; }
+        public Button BtnSacuvaj { get => btnSacuvaj; set => btnSacuvaj = value; }
+        public Label Label3 { get => label3; set => label3 = value; }
+        public Label Label2 { get => label2; set => label2 = value; }
+        public DataGridView DgvClanarine { get => dgvClanarine; set => dgvClanarine = value; }
+        public Label Label1 { get => label1; set => label1 = value; }
+        public DateTimePicker DtpDatumDo { get => dtpDatumDo; set => dtpDatumDo = value; }
+        public DateTimePicker DtpDatumOd { get => dtpDatumOd; set => dtpDatumOd = value; }
     }
 }

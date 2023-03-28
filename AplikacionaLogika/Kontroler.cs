@@ -1,8 +1,10 @@
 ﻿using DBBroker;
 using Domen;
 using Repozitorijum;
+using Server.SistemskeOperacije;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -32,113 +34,51 @@ namespace AplikacionaLogika
             }
         }
 
-        public bool ValidacijaClana(TextBox tbIme, TextBox tbPrezime, TextBox tbJMBG)
-        {
-            bool valid = true;
-
-            if (string.IsNullOrEmpty(tbIme.Text))
-            {
-                tbIme.BackColor = Color.Salmon;
-                valid = false;
-            }
-            else
-            {
-                tbIme.BackColor = Color.White;
-            }
-
-            if (string.IsNullOrEmpty(tbPrezime.Text))
-            {
-                tbPrezime.BackColor = Color.Salmon;
-                valid = false;
-            }
-            else
-            {
-                tbPrezime.BackColor = Color.White;
-            }
-            if (string.IsNullOrEmpty(tbJMBG.Text))
-            {
-                tbJMBG.BackColor = Color.Salmon;
-                valid = false;
-            }
-            else
-            {
-                tbJMBG.BackColor = Color.White;
-            }
-
-            return valid;
-        }
-
-
-
-
-
         #endregion
 
-        public Korisnik Korisnik { get; private set; }
+
+
+        public List<Primerak> VratiPrimerkeZaduzenja(ZaduzenjePrimerak zp)
+        {
+            SOBase so = new PretraziPrimerkeSO(zp);
+            so.ExecuteTemplate();
+            return ((PretraziPrimerkeSO)so).Rezultat;
+        }
 
         
 
-        private Broker broker = new Broker();
-        private KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
-        private ClanRepozitorijum clanRepozitorijum = new ClanRepozitorijum();
-
-       
-
-        private IgricaRepozitorijum igricaRepozitorijum = new IgricaRepozitorijum();
-        private ClanarinaRepozitorijum clanarinaRepozitorijum = new ClanarinaRepozitorijum();
-        private ZaduzenjeRepozitorijum zaduzenjeRepozitorijum = new ZaduzenjeRepozitorijum();
-
-
-        public List<Primerak> VratiPrimerkeZaduzenja(int zaduzenjeId)
-        {
-            return igricaRepozitorijum.VratiPrimerkeZaduzenja(zaduzenjeId);
-        }
-
-        public void StatusClanarine(Label lblNemaClanarine, Label lblClanarinaIstekla, Label lblClanarinaNijeIstekla, Clan c)
-        {
-            List<Clanarina> lista = clanarinaRepozitorijum.VratiClanarine();
-
-            foreach (Clanarina cla in lista)
-            {
-                if (cla.Clan.ClanskiBroj == c.ClanskiBroj)
-                {
-                    if (cla.DatumDo > DateTime.Now)
-                    {
-                        lblClanarinaNijeIstekla.Visible = true;
-                        return;
-                    }
-                    else
-                    {
-                        lblClanarinaIstekla.Visible = true;
-                        return;
-                    }
-                }
-            }
-            lblNemaClanarine.Visible = true;
-        }
-
         public List<ZaduzenjePrimerak> VratiZaduzenja()
         {
-            return zaduzenjeRepozitorijum.VratiZaduzenja();
+
+            SOBase so = new VratiZaduzenjaSO();
+            so.ExecuteTemplate();
+            return ((VratiZaduzenjaSO)so).Rezultat;
+
         }
 
 
         public int DodajClana(Clan clan) 
         {
-            return clanRepozitorijum.DodajClana(clan);
+
+            SOBase so = new DodajClanaSO(clan);
+            so.ExecuteTemplate();
+            return ((DodajClanaSO)so).Rezultat;
         }
 
-        public List<Primerak> VratiPrimerke(ComboBox cbIgrica)
+        public List<Primerak> VratiPrimerke(Primerak p)
         {
-            return igricaRepozitorijum.VratiPrimerke((Igrica)cbIgrica.SelectedItem);
-            return new List<Primerak>();
+            SOBase so = new VratiPrimerkeSO(p);
+            so.ExecuteTemplate();
+            return ((VratiPrimerkeSO)so).Rezultat;
+
         }
 
         public void Razduzi(Zaduzenje z)
         {
             try
             {
-                zaduzenjeRepozitorijum.Razduzi(z);
+                SOBase so = new IzmeniZaduzenjeSO(z);
+                so.ExecuteTemplate();
                 MessageBox.Show("Uspesno razduzivanje.");
             }
             catch (Exception ex)
@@ -148,78 +88,27 @@ namespace AplikacionaLogika
             }
         }
 
-        public void SacuvajClanarinu(ComboBox cbIzborClana, DateTimePicker dtpDatumOd, DateTimePicker dtpDatumDo)
+
+        public void IzbrisiClanarinu(Clanarina c)
         {
-            Clanarina c = new Clanarina
-            {
-                Clan = (Clan)cbIzborClana.SelectedItem,
-                DatumDo = dtpDatumDo.Value,
-                DatumOd = dtpDatumOd.Value
-            };
-            if (c.DatumDo < c.DatumOd)
-            {
-                MessageBox.Show("Datum do mora biti veci od datuma od. ");
-                return;
-            }
 
-            List < Clanarina > clanarine = clanarinaRepozitorijum.VratiClanarine();
-            if (clanarine.Contains(c))
-            {
-                foreach (Clanarina cl in clanarine)
-                {
-                    if (cl.Clan.ClanskiBroj == c.Clan.ClanskiBroj)
-                    {
-                        if (cl.DatumDo > c.DatumOd)
-                        {
-
-                            MessageBox.Show("Clanarina istice tek " + cl.DatumDo.ToShortDateString() + ". Sledecu clanarinu evidentirajte nakon tog datuma.");
-                            return;
-                        }
-                        else
-                        {
-                            try
-                            {
-
-                                clanarinaRepozitorijum.IzbrisiClanarinu(cl);
-                                clanarinaRepozitorijum.SacuvajClanarinu(c);
-                                MessageBox.Show("Clanarina uspesno sacuvana!");
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Greska pri skladistenju u bazu. ");
-                                Debug.WriteLine(">>>>>>>>> " + ex.Message);
-                            }
-
-                        }
-                    }
-
-                }
-            }
-            else
-            {
-                try
-                {
-
-                    clanarinaRepozitorijum.SacuvajClanarinu(c);
-                    MessageBox.Show("Clanarina uspesno sacuvana!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Greska pri skladistenju u bazu. ");
-                    Debug.WriteLine(">>>>>>>>> " + ex.Message);
-                }
-            }
-           
-
-
-            
+            SOBase so = new IzbrisiClanarinuSO(c);
+            so.ExecuteTemplate();
         }
+        public void EvidentirajClanarinu(Clanarina c)
+        {
+            SOBase so = new EvidentirajClanarinuSO(c);
+            so.ExecuteTemplate();
+        }
+       
 
         public void SacuvajZaduzenje(Zaduzenje zaduzenje)
         {
             try
             {
-                zaduzenjeRepozitorijum.SacuvajZaduzenje(zaduzenje);
+                SOBase so = new DodajZaduzenjeSO(zaduzenje);
+                so.ExecuteTemplate();
+
                 MessageBox.Show("Uspesno sacuvano zaduzenje!");
             }
             catch (Exception ex)
@@ -231,70 +120,80 @@ namespace AplikacionaLogika
 
         public Korisnik Login(Korisnik user)
         {
-            
-            List<Korisnik> users = korisnikRepozitorijum.GetUsers();
-
-            foreach (Korisnik u in users)
-            {
-                if (u.KorisnickoIme == user.KorisnickoIme && u.KorisnickaSifra == user.KorisnickaSifra)
-                {
-                    Korisnik = u;
-                    return u;
-                }
-            }
-            return null;
+            SOBase so = new PrijaviKorisnikaSO(user);
+            so.ExecuteTemplate();
+            return ((PrijaviKorisnikaSO)so).Rezultat;
         }
 
-        public int DodajClana(string ime, string prezime, string jmbg, string kontakt, string mail, string ulica, string broj)
-        {
-            Clan c = new Clan { };
-            return clanRepozitorijum.DodajClana(c);
-        }
+      
             
-        public List<Clan> VratiClanove(string ime)
+        public List<Clan> PretraziClanove(Clan c)
         {
+            SOBase so = new PretraziClanoveSO(c);
+            so.ExecuteTemplate();
+            return ((PretraziClanoveSO)so).Rezultat;
 
-            List<Clan> clanovi = clanRepozitorijum.VratiClanove(ime);
-            return clanovi;
+           
         }
 
         public void IzmeniClana(Clan c)
         {
-            clanRepozitorijum.IzmeniClana(c);
+            SOBase so = new IzmeniClanaSO(c);
+            so.ExecuteTemplate();
         }
 
         public void ObrisiClana(Clan c)
         {
-            clanRepozitorijum.ObrisiClana(c);
+            try
+            {
+                SOBase so = new ObrisiClanaSO(c);
+                so.ExecuteTemplate();
+
+                MessageBox.Show("Član je uspešno obrisan iz baze.");
+            }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show("Zabranjeno brisanje clana koji ima zaduzenje.");
+                Debug.WriteLine(">>> " + ex.Message);
+            }
+            
         }
         public List<Clan> VratiClanove()
         {
-            return clanRepozitorijum.VratiClanove();
+            SOBase so = new VratiClanoveSO();
+            so.ExecuteTemplate();
+            return ((VratiClanoveSO)so).Rezultat;
         }
-        public List<ZaduzenjePrimerak> VratiZaduzenjaClana(int clanskiBroj)
+        public List<ZaduzenjePrimerak> VratiZaduzenjaClana(ZaduzenjePrimerak zp)
         {
-            List<ZaduzenjePrimerak> zaduzenja = zaduzenjeRepozitorijum.VratiZaduzenjaClana(clanskiBroj);
-            return zaduzenja;
+
+            SOBase so = new VratiZaduzenjaClanaSO(zp);
+            so.ExecuteTemplate();
+            return ((VratiZaduzenjaClanaSO)so).Rezultat;
+
         }
-        public List<Igrica> VratiIgrice(string ime)
+        public List<Igrica> PretraziIgrice(Igrica i)
         {
-            List<Igrica> igrice = igricaRepozitorijum.VratiIgrice(ime);
-            return igrice;
+            
+            SOBase so = new PretraziIgriceSO(i);
+            so.ExecuteTemplate();
+            return ((PretraziIgriceSO)so).Rezultat;
+
         }
         public List<Igrica> VratiIgrice()
         {
-           
-                List<Igrica> igrice = igricaRepozitorijum.VratiIgrice();
-                return igrice;
-           
+            SOBase so = new VratiIgriceSO();
+            so.ExecuteTemplate();
+            return ((VratiIgriceSO)so).Rezultat;
            
         }
 
         public List<Clanarina> VratiClanarine()
         {
-            List<Clanarina> clanarine = clanarinaRepozitorijum.VratiClanarine();
-
-            return clanarine;
+            SOBase so = new VratiClanarineSO();
+            so.ExecuteTemplate();
+            return ((VratiClanarineSO)so).Rezultat;
         }
 
     }

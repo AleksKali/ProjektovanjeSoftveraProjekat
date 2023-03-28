@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs
 {
     partial class FrmLogin
@@ -104,6 +106,12 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.TextBox txtKorisnickoIme;
+
+        public Button BtnLogin { get => btnLogin; set => btnLogin = value; }
+        public Label LblKorisnickoIme { get => lblKorisnickoIme; set => lblKorisnickoIme = value; }
+        public Label LblLozinka { get => lblLozinka; set => lblLozinka = value; }
+        public TextBox TxtLozinka { get => txtLozinka; set => txtLozinka = value; }
+        public TextBox TxtKorisnickoIme { get => txtKorisnickoIme; set => txtKorisnickoIme = value; }
     }
 }
 

@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs.UserControls
 {
     partial class UCPretragaClanova
@@ -46,7 +48,6 @@ namespace KorisnickiInterfejs.UserControls
             this.btnObrisiClana.TabIndex = 14;
             this.btnObrisiClana.Text = "Obriši člana";
             this.btnObrisiClana.UseVisualStyleBackColor = true;
-            this.btnObrisiClana.Click += new System.EventHandler(this.btnObrisiClana_Click);
             // 
             // btnDetalji
             // 
@@ -57,7 +58,6 @@ namespace KorisnickiInterfejs.UserControls
             this.btnDetalji.TabIndex = 13;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = true;
-            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // dgvClanPretraga
             // 
@@ -77,7 +77,6 @@ namespace KorisnickiInterfejs.UserControls
             this.tbImeClana.Name = "tbImeClana";
             this.tbImeClana.Size = new System.Drawing.Size(204, 22);
             this.tbImeClana.TabIndex = 10;
-            this.tbImeClana.TextChanged += new System.EventHandler(this.tbImeClana_TextChanged);
             // 
             // lblimeClana
             // 
@@ -113,5 +112,11 @@ namespace KorisnickiInterfejs.UserControls
         private System.Windows.Forms.DataGridView dgvClanPretraga;
         private System.Windows.Forms.TextBox tbImeClana;
         private System.Windows.Forms.Label lblimeClana;
+
+        public Button BtnObrisiClana { get => btnObrisiClana; set => btnObrisiClana = value; }
+        public Button BtnDetalji { get => btnDetalji; set => btnDetalji = value; }
+        public DataGridView DgvClanPretraga { get => dgvClanPretraga; set => dgvClanPretraga = value; }
+        public TextBox TbImeClana { get => tbImeClana; set => tbImeClana = value; }
+        public Label LblimeClana { get => lblimeClana; set => lblimeClana = value; }
     }
 }

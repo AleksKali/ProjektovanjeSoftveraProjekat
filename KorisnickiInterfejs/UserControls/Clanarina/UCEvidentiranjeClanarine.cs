@@ -1,4 +1,5 @@
-﻿using AplikacionaLogika;
+﻿
+using KorisnickiInterfejs.KontrolerKI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,14 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
 {
     public partial class UCEvidentiranjeClanarine : UserControl
     {
+        private EvidentiranjeClanarineKontroler kontroler;
         public UCEvidentiranjeClanarine()
         {
             InitializeComponent();
-            Init();
+            kontroler = new EvidentiranjeClanarineKontroler(this);
+            kontroler.Init();
         }
-
+        /*
         private void Init()
         {
             try
@@ -41,6 +44,6 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
         {
             Kontroler.Instance.SacuvajClanarinu(cbIzborClana, dtpDatumOd, dtpDatumDo);
             dgvClanarine.DataSource=new BindingList<Domen.Clanarina> (Kontroler.Instance.VratiClanarine());
-        }
+        }*/
     }
 }

@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace KorisnickiInterfejs
 {
     partial class FrmMain
@@ -151,5 +153,16 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.ToolStripMenuItem članarineToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolStripMenuItem igriceToolStripMenuItem;
+
+        public MenuStrip MenuStrip1 { get => menuStrip1; set => menuStrip1 = value; }
+        public ToolStripMenuItem LiToolStripMenuItem { get => liToolStripMenuItem; set => liToolStripMenuItem = value; }
+        public ToolStripMenuItem UnosNovogČlanaToolStripMenuItem { get => unosNovogČlanaToolStripMenuItem; set => unosNovogČlanaToolStripMenuItem = value; }
+        public ToolStripMenuItem PretragaČlanovaToolStripMenuItem { get => pretragaČlanovaToolStripMenuItem; set => pretragaČlanovaToolStripMenuItem = value; }
+        public ToolStripMenuItem ZaduženjaToolStripMenuItem { get => zaduženjaToolStripMenuItem; set => zaduženjaToolStripMenuItem = value; }
+        public ToolStripMenuItem PretragaZaduženjaToolStripMenuItem { get => pretragaZaduženjaToolStripMenuItem; set => pretragaZaduženjaToolStripMenuItem = value; }
+        public ToolStripMenuItem KreiranjeNovogZaduženjaToolStripMenuItem { get => kreiranjeNovogZaduženjaToolStripMenuItem; set => kreiranjeNovogZaduženjaToolStripMenuItem = value; }
+        public ToolStripMenuItem ČlanarineToolStripMenuItem { get => članarineToolStripMenuItem; set => članarineToolStripMenuItem = value; }
+        public Panel PnlMain { get => pnlMain; set => pnlMain = value; }
+        public ToolStripMenuItem IgriceToolStripMenuItem { get => igriceToolStripMenuItem; set => igriceToolStripMenuItem = value; }
     }
 }

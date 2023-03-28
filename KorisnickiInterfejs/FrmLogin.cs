@@ -1,5 +1,6 @@
-﻿using AplikacionaLogika;
+﻿
 using Domen;
+using KorisnickiInterfejs.KontrolerKI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,23 @@ namespace KorisnickiInterfejs
 {
     public partial class FrmLogin : Form
     {
+
+        private LoginKontroler kontroler;
+        public FrmLogin()
+        {
+            InitializeComponent();
+            kontroler = new LoginKontroler();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            kontroler.Login(this);
+
+        }
+
+
+        #region pre 
+        /*
         public FrmLogin()
         {
             InitializeComponent();
@@ -60,6 +78,7 @@ namespace KorisnickiInterfejs
             {
                 MessageBox.Show("Korisnik ne postoji!");
             }
-        }
+        }*/
+        #endregion
     }
 }

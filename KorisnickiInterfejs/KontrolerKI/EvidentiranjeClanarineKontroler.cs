@@ -38,7 +38,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Debug.WriteLine(">>> " + ex.Message);
             }
         }
 
@@ -78,14 +78,12 @@ namespace KorisnickiInterfejs.KontrolerKI
                                 Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzbrisiClanarinu, cl);
                                 Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.EvidentirajClanarinu, c);
 
-                                //clanarinaRepozitorijum.IzbrisiClanarinu(cl);
-                                //clanarinaRepozitorijum.SacuvajClanarinu(c);
-                                MessageBox.Show("Clanarina uspesno sacuvana!");
+                                MessageBox.Show("Sistem je zapamtio novu članarinu!");
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show("Greska pri skladistenju u bazu. ");
-                                Debug.WriteLine(">>>>>>>>> " + ex.Message);
+                                MessageBox.Show("Sistem ne može da zapamti članarinu.");
+                                Debug.WriteLine(">>> " + ex.Message);
                             }
 
                         }
@@ -99,12 +97,12 @@ namespace KorisnickiInterfejs.KontrolerKI
                 {
 
                     Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.EvidentirajClanarinu, c);
-                    MessageBox.Show("Clanarina uspesno sacuvana!");
+                    MessageBox.Show("Sistem je zapamtio novu članarinu!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Greska pri skladistenju u bazu. ");
-                    Debug.WriteLine(">>>>>>>>> " + ex.Message);
+                    MessageBox.Show("Sistem ne može da zapamti članarinu.");
+                    Debug.WriteLine(">>> " + ex.Message);
                 }
             }
 

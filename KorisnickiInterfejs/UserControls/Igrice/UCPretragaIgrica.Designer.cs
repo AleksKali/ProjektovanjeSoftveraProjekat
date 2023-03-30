@@ -41,17 +41,17 @@ namespace KorisnickiInterfejs.UserControls.Igrice
             // 
             this.dgvPretragaIgrica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPretragaIgrica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPretragaIgrica.Location = new System.Drawing.Point(16, 72);
+            this.dgvPretragaIgrica.Location = new System.Drawing.Point(72, 155);
             this.dgvPretragaIgrica.Name = "dgvPretragaIgrica";
             this.dgvPretragaIgrica.RowHeadersWidth = 51;
             this.dgvPretragaIgrica.RowTemplate.Height = 24;
-            this.dgvPretragaIgrica.Size = new System.Drawing.Size(578, 268);
+            this.dgvPretragaIgrica.Size = new System.Drawing.Size(456, 268);
             this.dgvPretragaIgrica.TabIndex = 12;
             // 
             // tbImeIgrice
             // 
             this.tbImeIgrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbImeIgrice.Location = new System.Drawing.Point(371, 33);
+            this.tbImeIgrice.Location = new System.Drawing.Point(318, 110);
             this.tbImeIgrice.Name = "tbImeIgrice";
             this.tbImeIgrice.Size = new System.Drawing.Size(204, 22);
             this.tbImeIgrice.TabIndex = 13;
@@ -60,11 +60,11 @@ namespace KorisnickiInterfejs.UserControls.Igrice
             // 
             this.lblimeIgrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblimeIgrice.AutoSize = true;
-            this.lblimeIgrice.Location = new System.Drawing.Point(253, 36);
+            this.lblimeIgrice.Location = new System.Drawing.Point(82, 113);
             this.lblimeIgrice.Name = "lblimeIgrice";
-            this.lblimeIgrice.Size = new System.Drawing.Size(86, 17);
+            this.lblimeIgrice.Size = new System.Drawing.Size(217, 17);
             this.lblimeIgrice.TabIndex = 14;
-            this.lblimeIgrice.Text = "Unesi igricu:";
+            this.lblimeIgrice.Text = "Unesi naziv igrice ili proizvođača:";
             // 
             // UCPretragaIgrica
             // 
@@ -74,7 +74,7 @@ namespace KorisnickiInterfejs.UserControls.Igrice
             this.Controls.Add(this.tbImeIgrice);
             this.Controls.Add(this.dgvPretragaIgrica);
             this.Name = "UCPretragaIgrica";
-            this.Size = new System.Drawing.Size(613, 611);
+            this.Size = new System.Drawing.Size(613, 555);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPretragaIgrica)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

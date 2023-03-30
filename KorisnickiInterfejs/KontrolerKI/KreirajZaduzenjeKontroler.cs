@@ -5,6 +5,7 @@ using KorisnickiInterfejs.UserControls.Zaduzenje;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,8 @@ namespace KorisnickiInterfejs.KontrolerKI
 
         internal void Init()
         {
+            try
+            {
             uc.CbIgrica.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Igrica>>(Common.Komunikacija.Operacija.VratiIgrice);
             uc.CbClan.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove);
             uc.DgvPrimerci.DataSource = primerci;
@@ -34,6 +37,13 @@ namespace KorisnickiInterfejs.KontrolerKI
             uc.BtnSacuvajZaduzenje.Click += BtnSacuvajZaduzenje_Click;
             uc.CbIgrica.SelectedIndexChanged += CbIgrica_SelectedIndexChanged;
             uc.BtnIzbrisiRed.Click += BtnIzbrisiRed_Click;
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(">>> " + ex.Message);
+
+            }
         }
 
         private void BtnIzbrisiRed_Click(object sender, EventArgs e)
@@ -54,7 +64,16 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
                 Igrica = (Igrica)uc.CbIgrica.SelectedItem
             };
+            try
+            {
             uc.CbPrimerak.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Primerak>>(Common.Komunikacija.Operacija.PretraziPrimerke, p);
+
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(">>> " + ex.Message);
+            }
         }
 
         private void BtnSacuvajZaduzenje_Click(object sender, EventArgs e)
@@ -64,6 +83,8 @@ namespace KorisnickiInterfejs.KontrolerKI
                 return;
             }
 
+            try
+            {
             zaduzenje.Clan = (Clan)uc.CbClan.SelectedItem;
             zaduzenje.Korisnik = SessionData.Instance.Korisnik;
             zaduzenje.Primerci = primerci.ToList();
@@ -72,6 +93,15 @@ namespace KorisnickiInterfejs.KontrolerKI
             
             primerci.Clear();
             uc.DgvPrimerci.DataSource = primerci;
+
+            MessageBox.Show("Sistem je zapamtio zaduženje.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sistem ne može da zapamti zaduženje.");
+                Debug.WriteLine(">>> " + ex.Message);
+
+            }
         }
 
         private void BtnSacuvajIgricu_Click(object sender, EventArgs e)

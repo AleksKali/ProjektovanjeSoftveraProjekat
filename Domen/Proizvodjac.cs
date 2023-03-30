@@ -11,6 +11,7 @@ namespace Domen
     [Serializable]
     public class Proizvodjac : IDomenskiObjekat
     {
+        [Browsable(false)]
         public int ProizvodjacID { get; set; }
         public string Naziv { get; set; }
         [Browsable(false)]

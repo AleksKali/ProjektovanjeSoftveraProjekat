@@ -31,7 +31,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPronadjiZaduzenja = new System.Windows.Forms.Button();
             this.tbClanskiBroj = new System.Windows.Forms.TextBox();
             this.lblClanskiBroj = new System.Windows.Forms.Label();
             this.btnDetalji = new System.Windows.Forms.Button();
@@ -40,18 +39,9 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaduzenja)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnPronadjiZaduzenja
-            // 
-            this.btnPronadjiZaduzenja.Location = new System.Drawing.Point(566, 33);
-            this.btnPronadjiZaduzenja.Name = "btnPronadjiZaduzenja";
-            this.btnPronadjiZaduzenja.Size = new System.Drawing.Size(146, 29);
-            this.btnPronadjiZaduzenja.TabIndex = 16;
-            this.btnPronadjiZaduzenja.Text = "Pronađi zaduženja";
-            this.btnPronadjiZaduzenja.UseVisualStyleBackColor = true;
-            // 
             // tbClanskiBroj
             // 
-            this.tbClanskiBroj.Location = new System.Drawing.Point(287, 36);
+            this.tbClanskiBroj.Location = new System.Drawing.Point(379, 36);
             this.tbClanskiBroj.Name = "tbClanskiBroj";
             this.tbClanskiBroj.Size = new System.Drawing.Size(204, 22);
             this.tbClanskiBroj.TabIndex = 15;
@@ -59,11 +49,11 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // lblClanskiBroj
             // 
             this.lblClanskiBroj.AutoSize = true;
-            this.lblClanskiBroj.Location = new System.Drawing.Point(98, 36);
+            this.lblClanskiBroj.Location = new System.Drawing.Point(95, 38);
             this.lblClanskiBroj.Name = "lblClanskiBroj";
-            this.lblClanskiBroj.Size = new System.Drawing.Size(135, 17);
+            this.lblClanskiBroj.Size = new System.Drawing.Size(266, 17);
             this.lblClanskiBroj.TabIndex = 14;
-            this.lblClanskiBroj.Text = "Unesite članski broj:";
+            this.lblClanskiBroj.Text = "Unesi članski broj ILI ime i prezime člana:";
             // 
             // btnDetalji
             // 
@@ -97,7 +87,6 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnPronadjiZaduzenja);
             this.Controls.Add(this.tbClanskiBroj);
             this.Controls.Add(this.lblClanskiBroj);
             this.Controls.Add(this.btnDetalji);
@@ -112,15 +101,13 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnPronadjiZaduzenja;
         private System.Windows.Forms.TextBox tbClanskiBroj;
         private System.Windows.Forms.Label lblClanskiBroj;
         private System.Windows.Forms.Button btnDetalji;
         private System.Windows.Forms.Button btnRazduzi;
         private System.Windows.Forms.DataGridView dgvZaduzenja;
 
-        public Button BtnPronadjiZaduzenja { get => btnPronadjiZaduzenja; set => btnPronadjiZaduzenja = value; }
+        
         public TextBox TbClanskiBroj { get => tbClanskiBroj; set => tbClanskiBroj = value; }
         public Label LblClanskiBroj { get => lblClanskiBroj; set => lblClanskiBroj = value; }
         public Button BtnDetalji { get => btnDetalji; set => btnDetalji = value; }

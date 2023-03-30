@@ -56,6 +56,8 @@ namespace KorisnickiInterfejs
             this.tbDatumUclanjenja = new System.Windows.Forms.TextBox();
             this.lblClanarinaNijeIstekla = new System.Windows.Forms.Label();
             this.lblClanarinaIstekla = new System.Windows.Forms.Label();
+            this.btnDetaljiZaduzenja = new System.Windows.Forms.Button();
+            this.lblBezZaduzenja = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrenutnaZaduzenja)).BeginInit();
             this.gbUnosClana.SuspendLayout();
             this.SuspendLayout();
@@ -288,11 +290,34 @@ namespace KorisnickiInterfejs
             this.lblClanarinaIstekla.Text = "Članarina je istekla";
             this.lblClanarinaIstekla.Visible = false;
             // 
+            // btnDetaljiZaduzenja
+            // 
+            this.btnDetaljiZaduzenja.Location = new System.Drawing.Point(800, 209);
+            this.btnDetaljiZaduzenja.Name = "btnDetaljiZaduzenja";
+            this.btnDetaljiZaduzenja.Size = new System.Drawing.Size(75, 29);
+            this.btnDetaljiZaduzenja.TabIndex = 10;
+            this.btnDetaljiZaduzenja.Text = "Detalji";
+            this.btnDetaljiZaduzenja.UseVisualStyleBackColor = true;
+            // 
+            // lblBezZaduzenja
+            // 
+            this.lblBezZaduzenja.AutoSize = true;
+            this.lblBezZaduzenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBezZaduzenja.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblBezZaduzenja.Location = new System.Drawing.Point(272, 146);
+            this.lblBezZaduzenja.Name = "lblBezZaduzenja";
+            this.lblBezZaduzenja.Size = new System.Drawing.Size(234, 17);
+            this.lblBezZaduzenja.TabIndex = 11;
+            this.lblBezZaduzenja.Text = "Član trenutno nema zaduženja.";
+            this.lblBezZaduzenja.Visible = false;
+            // 
             // FrmDetaljiClana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 737);
+            this.ClientSize = new System.Drawing.Size(915, 737);
+            this.Controls.Add(this.lblBezZaduzenja);
+            this.Controls.Add(this.btnDetaljiZaduzenja);
             this.Controls.Add(this.lblClanarinaIstekla);
             this.Controls.Add(this.lblClanarinaNijeIstekla);
             this.Controls.Add(this.tbDatumUclanjenja);
@@ -340,6 +365,8 @@ namespace KorisnickiInterfejs
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Label lblClanarinaNijeIstekla;
         private System.Windows.Forms.Label lblClanarinaIstekla;
+        private Button btnDetaljiZaduzenja;
+        private Label lblBezZaduzenja;
 
         public Label LblClanskiBroj { get => lblClanskiBroj; set => lblClanskiBroj = value; }
         public Label LblDatumUclanjenja { get => lblDatumUclanjenja; set => lblDatumUclanjenja = value; }
@@ -366,5 +393,7 @@ namespace KorisnickiInterfejs
         public Button BtnIzmeni { get => btnIzmeni; set => btnIzmeni = value; }
         public Label LblClanarinaNijeIstekla { get => lblClanarinaNijeIstekla; set => lblClanarinaNijeIstekla = value; }
         public Label LblClanarinaIstekla { get => lblClanarinaIstekla; set => lblClanarinaIstekla = value; }
+        public Button BtnDetaljiZaduzenja { get => btnDetaljiZaduzenja; set => btnDetaljiZaduzenja = value; }
+        public Label LblBezZaduzenja { get => lblBezZaduzenja; set => lblBezZaduzenja = value; }
     }
 }

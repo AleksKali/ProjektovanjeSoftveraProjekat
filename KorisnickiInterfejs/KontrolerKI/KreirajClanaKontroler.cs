@@ -3,8 +3,10 @@ using KorisnickiInterfejs.ServerKomunikacija;
 using KorisnickiInterfejs.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,11 +44,9 @@ namespace KorisnickiInterfejs.KontrolerKI
             clan.BrojUlice = uc.TbBroj.Text;
             clan.Jmbg = uc.TbJMBG.Text;
             clan.Kontakt = uc.TbKontakt.Text;
-            //try catch? 
-
-            //int id = Kontroler.Instance.DodajClana(clan);
-
-            //Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.KreirajClana, clan);
+            
+            try
+            {
             int id = Komunikacija.Instance.SendRequestGetResult<List<int>>(Common.Komunikacija.Operacija.KreirajClana, clan)[0];
 
             MessageBox.Show("Uspešno ste kreirali člana " + clan.Ime + " " + clan.Prezime + " sa članskim brojem: " + id);
@@ -58,8 +58,29 @@ namespace KorisnickiInterfejs.KontrolerKI
                     control.ResetText();
                 }
             }
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sistem ne može da zapamti člana.");
+                Debug.WriteLine(">>> " + ex.Message);
+            }
         }
+        private bool IsEmailValid(string email)
+        {
+            var valid = true;
 
+            try
+            {
+                var emailAddress = new MailAddress(email);
+            }
+            catch
+            {
+                valid = false;
+            }
+
+            return valid;
+        }
         public bool ValidacijaClana()
         {
             bool valid = true;
@@ -83,7 +104,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
                 uc.TbPrezime.BackColor = Color.White;
             }
-            if (string.IsNullOrEmpty(uc.TbJMBG.Text)) //try parse u int i labela
+            if (string.IsNullOrEmpty(uc.TbJMBG.Text) || !int.TryParse(uc.TbJMBG.Text, out _))
             {
                 uc.TbJMBG.BackColor = Color.Salmon;
                 valid = false;
@@ -91,6 +112,15 @@ namespace KorisnickiInterfejs.KontrolerKI
             else
             {
                 uc.TbJMBG.BackColor = Color.White;
+            }
+            if (!string.IsNullOrEmpty(uc.TbMail.Text) && !IsEmailValid(uc.TbMail.Text))
+            {
+                uc.TbMail.BackColor = Color.Salmon;
+                valid = false;
+            }
+            else
+            {
+                uc.TbMail.BackColor = Color.White;
             }
 
             return valid;

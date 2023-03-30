@@ -109,7 +109,7 @@ namespace Server.Main
                         odgovor.Rezultat = Kontroler.Instance.VratiZaduzenja(); 
                         break;
                     case Operacija.RazduziZaduzenje:
-                        Kontroler.Instance.Razduzi((Zaduzenje)zahtev.ZahtevaniObjekat); //nije
+                        Kontroler.Instance.Razduzi((Zaduzenje)zahtev.ZahtevaniObjekat); 
                         break;
                     case Operacija.Kraj:
                         kraj = true;

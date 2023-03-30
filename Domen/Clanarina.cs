@@ -11,6 +11,7 @@ namespace Domen
     [Serializable]
     public class Clanarina : IDomenskiObjekat
     {
+        [Browsable(false)]
         public int ClanarinaID { get; set; }
         public Clan Clan {get; set; } 
         public DateTime DatumOd { get; set; }

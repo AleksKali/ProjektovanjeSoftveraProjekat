@@ -19,7 +19,30 @@ namespace Server.SistemskeOperacije
         }
         protected override void Execute()
         {
-            Rezultat = repozitorijum.Search(zp).OfType<ZaduzenjePrimerak>().ToList();
+            List<ZaduzenjePrimerak> lista = repozitorijum.Search(zp).OfType<ZaduzenjePrimerak>().ToList();
+            Zaduzenje z;
+            List<ZaduzenjePrimerak> pomocna = new List<ZaduzenjePrimerak>();
+
+            foreach (ZaduzenjePrimerak zaduzenjePrimerak in lista)
+            {
+                z = new Zaduzenje
+                {
+                    ZaduzenjeID = zaduzenjePrimerak.ZaduzenjeId
+                };
+
+               zaduzenjePrimerak.BrojPrimeraka =  (repozitorijum.Search(z).OfType<Zaduzenje>().ToList())[0].brojPrimeraka;
+
+                if (!pomocna.Contains(zaduzenjePrimerak))
+                {
+                    pomocna.Add(zaduzenjePrimerak);
+                }
+            }
+
+
+            
+
+            //lista = lista.Distinct().ToList();
+            Rezultat = pomocna;
         }
     }
 }

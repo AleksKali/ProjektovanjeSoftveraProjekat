@@ -11,6 +11,7 @@ namespace Domen
     [Serializable]
     public class Zaduzenje : IDomenskiObjekat
     {
+        
         public int ZaduzenjeID { get; set; }
         public Clan Clan { get; set; }
         public DateTime DatumZaduzenja { get; set; }

@@ -75,17 +75,9 @@ namespace AplikacionaLogika
 
         public void Razduzi(Zaduzenje z)
         {
-            try
-            {
-                SOBase so = new IzmeniZaduzenjeSO(z);
-                so.ExecuteTemplate();
-                MessageBox.Show("Uspesno razduzivanje.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Neuspesno razduzivanje.");
-                Debug.WriteLine(">>>>>>>>> " + ex.Message);
-            }
+            SOBase so = new IzmeniZaduzenjeSO(z);
+            so.ExecuteTemplate();
+            
         }
 
 
@@ -104,18 +96,9 @@ namespace AplikacionaLogika
 
         public void SacuvajZaduzenje(Zaduzenje zaduzenje)
         {
-            try
-            {
                 SOBase so = new DodajZaduzenjeSO(zaduzenje);
                 so.ExecuteTemplate();
-
-                MessageBox.Show("Uspesno sacuvano zaduzenje!");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Zaduzenje nije sacuvano."+ex.Message);
-            }
+          
         }
 
         public Korisnik Login(Korisnik user)
@@ -144,19 +127,10 @@ namespace AplikacionaLogika
 
         public void ObrisiClana(Clan c)
         {
-            try
-            {
                 SOBase so = new ObrisiClanaSO(c);
                 so.ExecuteTemplate();
-
-                MessageBox.Show("Član je uspešno obrisan iz baze.");
-            }
-            catch (SqlException ex)
-            {
-
-                MessageBox.Show("Zabranjeno brisanje clana koji ima zaduzenje.");
-                Debug.WriteLine(">>> " + ex.Message);
-            }
+          
+            
             
         }
         public List<Clan> VratiClanove()

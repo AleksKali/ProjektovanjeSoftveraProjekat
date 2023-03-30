@@ -21,6 +21,8 @@ namespace Server.SistemskeOperacije
 
             int brojPrimeraka = lista[0].brojPrimeraka;
 
+            ZaduzenjePrimerak zp = new ZaduzenjePrimerak();
+
             if (brojPrimeraka == z.Primerci.Count)
             {
                 repozitorijum.Update(z);
@@ -28,7 +30,12 @@ namespace Server.SistemskeOperacije
 
             foreach (Primerak p in z.Primerci)
             {
-                
+                zp.ZaduzenjeId = z.ZaduzenjeID;
+                zp.IgricaID = p.Igrica.IgricaId;
+                zp.InventarskiBrojPrimerka = p.InventarskiBroj;
+
+                repozitorijum.Update(zp);
+
                 p.izdat = 0;
                 repozitorijum.Update(p);
 

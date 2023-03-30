@@ -11,10 +11,11 @@ namespace Domen
     [Serializable]
     public class Primerak : IDomenskiObjekat
     {
-        public Igrica Igrica { get; set; } 
+        public Igrica Igrica { get; set; }
+        [Browsable(false)]
         public int InventarskiBroj { get; set; }
         public int GodinaIzdanja { get; set; }
-        public bool Izdat { get; set; }
+        
         [Browsable(false)]
         public string NazivTabele => "Primerak";
         [Browsable(false)]
@@ -41,7 +42,7 @@ namespace Domen
         [Browsable(false)]
         public string AlijasTabele => "p";
         [Browsable(false)]
-        public string SelectValuesSearch => "p.InventarskiBroj as inventarskiBroj, p.godinaIzdanja as godinaIzdanja, i.Naziv as nazivIgrice";
+        public string SelectValuesSearch => "p.InventarskiBroj as inventarskiBroj, p.godinaIzdanja as godinaIzdanja, i.Naziv as nazivIgrice, i.igricaId as igricaId";
         [Browsable(false)]
         public string JoinSearch => "join ZaduzenjePrimerak zp on (zp.IgricaID=p.IgricaID and zp.InventarskiBroj=p.InventarskiBroj) join zaduzenje z on (z.ZaduzenjeID=zp.ZaduzenjeID) join Igrica i on (p.IgricaID=i.IgricaID)";
 
@@ -81,7 +82,8 @@ namespace Domen
 
                 Igrica = new Igrica
                 {
-                    Naziv = (string)reader["nazivIgrice"]
+                    Naziv = (string)reader["nazivIgrice"],
+                    IgricaId = (int)reader["igricaId"]
                 },
                 InventarskiBroj = (int)reader["inventarskiBroj"],
                 GodinaIzdanja = (int)reader["godinaIzdanja"]

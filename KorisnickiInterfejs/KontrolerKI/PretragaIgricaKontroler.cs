@@ -3,6 +3,7 @@ using KorisnickiInterfejs.ServerKomunikacija;
 using KorisnickiInterfejs.UserControls.Igrice;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,16 @@ namespace KorisnickiInterfejs.KontrolerKI
         }
         internal void Init()
         {
+            try
+            {
             uc.DgvPretragaIgrica.DataSource =  Komunikacija.Instance.SendRequestGetResult<List<Igrica>>(Common.Komunikacija.Operacija.VratiIgrice);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(">>> " + ex.Message);
+
+            }
             uc.TbImeIgrice.TextChanged += TbImeIgrice_TextChanged;
         }
 
@@ -40,7 +50,8 @@ namespace KorisnickiInterfejs.KontrolerKI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Sistem ne može da nađe igrice po zadatim vrednostima.");
+                Debug.WriteLine(">>> " + ex.Message);
             }
         }
 

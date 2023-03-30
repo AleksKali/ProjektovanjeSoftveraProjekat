@@ -188,6 +188,7 @@ namespace KorisnickiInterfejs.UserControls
             // 
             // gbDodajClana
             // 
+            this.gbDodajClana.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbDodajClana.Controls.Add(this.tbBroj);
             this.gbDodajClana.Controls.Add(this.tbUlica);
             this.gbDodajClana.Controls.Add(this.tbMail);

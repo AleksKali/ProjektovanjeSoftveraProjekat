@@ -11,10 +11,13 @@ namespace Domen
     [Serializable]
     public class Korisnik : IDomenskiObjekat
     {
+        [Browsable(false)]
         public int KorisnikID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
+        [Browsable(false)]
         public string KorisnickoIme { get; set; }
+        [Browsable(false)]
         public string KorisnickaSifra { get; set; }
         [Browsable(false)]
         public string NazivTabele => "Korisnik";

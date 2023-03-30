@@ -88,7 +88,6 @@ namespace Repozitorijum
 
             SqlCommand command = broker.CreateCommand();
             command.CommandText = $"insert into {obj.NazivTabele} {obj.InsertColumns} {obj.OutputValue} values {obj.InsertValues}";
-            //obj.AddParameters(command);
             result = (int)command.ExecuteScalar();
 
             return result;

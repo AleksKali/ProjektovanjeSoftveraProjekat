@@ -11,11 +11,12 @@ namespace Domen
     [Serializable]
     public class Igrica : IDomenskiObjekat
     {
+        [Browsable(false)]
         public int IgricaId { get; set; }
         public string Naziv { get; set; }
         public Proizvodjac Proizvodjac { get; set; }
         [Browsable(false)]
-        public string NazivTabele => "Igrica i";
+        public string NazivTabele => "Igrica";
         [Browsable(false)]
         public string InsertValues => "";
         [Browsable(false)]
@@ -23,7 +24,7 @@ namespace Domen
 
         public string uslovPretrage;
         [Browsable(false)]
-        public string UslovPretrage => $"pr.izdat=0 AND i.naziv LIKE '%{uslovPretrage}%' group by i.igricaid, i.naziv, p.proizvodjacid, p.naziv";
+        public string UslovPretrage => $"pr.izdat=0 AND concat(i.naziv,' ', p.naziv) LIKE '%{uslovPretrage}%' group by i.igricaid, i.naziv, p.proizvodjacid, p.naziv";
         [Browsable(false)]
         public string UpdateValues => "";
         [Browsable(false)]
@@ -37,7 +38,7 @@ namespace Domen
         [Browsable(false)]
         public string GlavniUslov => "";
         [Browsable(false)]
-        public string AlijasTabele => "";
+        public string AlijasTabele => "i";
         [Browsable(false)]
         public string SelectValuesSearch => "i.igricaid as igricaId, i.naziv as nazivIgrice, p.proizvodjacid as proizvodjacId, p.naziv as proizvodjacNaziv";
         [Browsable(false)]

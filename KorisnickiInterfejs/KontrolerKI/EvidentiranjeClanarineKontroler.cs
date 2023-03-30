@@ -31,7 +31,7 @@ namespace KorisnickiInterfejs.KontrolerKI
 
                 uc.DgvClanarine.DataSource = clanarine;
                 uc.DgvClanarine.ReadOnly = true;
-                uc.DgvClanarine.Columns[0].Visible = false;
+                //uc.DgvClanarine.Columns[0].Visible = false;
 
                 uc.CbIzborClana.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove);
 

@@ -31,7 +31,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             uc.CbIgrica.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Igrica>>(Common.Komunikacija.Operacija.VratiIgrice);
             uc.CbClan.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove);
             uc.DgvPrimerci.DataSource = primerci;
-            uc.DgvPrimerci.Columns[3].Visible = false;
+            //uc.DgvPrimerci.Columns[3].Visible = false;
 
             uc.BtnSacuvajIgricu.Click += BtnSacuvajIgricu_Click;
             uc.BtnSacuvajZaduzenje.Click += BtnSacuvajZaduzenje_Click;

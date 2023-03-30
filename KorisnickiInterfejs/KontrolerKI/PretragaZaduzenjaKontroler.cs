@@ -106,11 +106,13 @@ namespace KorisnickiInterfejs.KontrolerKI
             dijalog.ShowDialog();
             DialogResult result = dijalog.DialogResult;
             dijalog.Dispose();
-            ////if (result == DialogResult.OK)
-            ////{
-            ////    MessageBox.Show("Uspesno ste izmenili podatke o zaduzenju!");
-            ////}
-            uc.DgvZaduzenja.DataSource = Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.VratiZaduzenja);
+                ////if (result == DialogResult.OK)
+                ////{
+                ////    MessageBox.Show("Uspesno ste izmenili podatke o zaduzenju!");
+                ////}
+                uc.DgvZaduzenja.DataSource = Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.VratiZaduzenja);
+            
+
             }
             catch (Exception ex)
             {
@@ -145,6 +147,7 @@ namespace KorisnickiInterfejs.KontrolerKI
 
         private void BtnRazduziIgricu_Click(object sender, EventArgs e)
         {
+            List<Primerak> lista;
             if (dijalog.DgvSviPrimerci.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Niste odabrali red!");
@@ -161,8 +164,14 @@ namespace KorisnickiInterfejs.KontrolerKI
             Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.RazduziZaduzenje, z);
 
             z.Primerci.Remove(p);
-            dijalog.DgvSviPrimerci.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Primerak>>(Common.Komunikacija.Operacija.VratiPrimerkeZaduzenja, izabranoZaduzenje);
-            MessageBox.Show("Sistem je izmenio zaduženje!");
+            lista = Komunikacija.Instance.SendRequestGetResult<List<Primerak>>(Common.Komunikacija.Operacija.VratiPrimerkeZaduzenja, izabranoZaduzenje);
+            dijalog.DgvSviPrimerci.DataSource = lista;
+
+                if (lista.Count == 0)
+                {
+                    dijalog.DialogResult = DialogResult.OK;
+                }
+           MessageBox.Show("Sistem je izmenio zaduženje!");
 
             }
             catch (Exception ex)

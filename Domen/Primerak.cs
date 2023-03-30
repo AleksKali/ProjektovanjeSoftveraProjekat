@@ -12,7 +12,7 @@ namespace Domen
     public class Primerak : IDomenskiObjekat
     {
         public Igrica Igrica { get; set; }
-        [Browsable(false)]
+        
         public int InventarskiBroj { get; set; }
         public int GodinaIzdanja { get; set; }
         

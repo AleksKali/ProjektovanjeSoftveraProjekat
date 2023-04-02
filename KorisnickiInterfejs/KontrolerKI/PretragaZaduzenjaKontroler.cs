@@ -35,7 +35,6 @@ namespace KorisnickiInterfejs.KontrolerKI
             uc.BtnRazduzi.Click += BtnRazduzi_Click;
             uc.BtnDetalji.Click += BtnDetalji_Click;
             uc.TbClanskiBroj.TextChanged += TbClanskiBroj_TextChanged;
-
             }
             catch (Exception ex)
             {
@@ -55,7 +54,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             try
             {
 
-            zaduzenja = new BindingList<ZaduzenjePrimerak>(Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.VratiZaduzenjaClana, zp));
+            zaduzenja = new BindingList<ZaduzenjePrimerak>(Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.PretraziZaduzenja, zp));
             uc.DgvZaduzenja.DataSource = zaduzenja;
             uc.DgvZaduzenja.Columns[5].Visible = false;
 
@@ -133,7 +132,7 @@ namespace KorisnickiInterfejs.KontrolerKI
                 z.Primerci.Add(primerak);
             }
 
-            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.RazduziZaduzenje, z);
+            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzmeniZaduzenje, z);
             dijalog.DialogResult = DialogResult.OK;
             MessageBox.Show("Sistem je izmenio zaduženje!");
 
@@ -161,7 +160,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
             dijalog.DgvSviPrimerci.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Primerak>>(Common.Komunikacija.Operacija.VratiPrimerkeZaduzenja, izabranoZaduzenje);
 
-            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.RazduziZaduzenje, z);
+            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzmeniZaduzenje, z);
 
             z.Primerci.Remove(p);
             lista = Komunikacija.Instance.SendRequestGetResult<List<Primerak>>(Common.Komunikacija.Operacija.VratiPrimerkeZaduzenja, izabranoZaduzenje);
@@ -202,7 +201,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             z.Clan = zp.Clan;
             try
             {
-            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.RazduziZaduzenje, z);
+            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzmeniZaduzenje, z);
             uc.DgvZaduzenja.DataSource = Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.VratiZaduzenja);
             uc.DgvZaduzenja.Columns[5].Visible = false;
             MessageBox.Show("Sistem je izmenio zaduženje!");

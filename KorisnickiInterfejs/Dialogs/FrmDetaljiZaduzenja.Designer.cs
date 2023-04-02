@@ -133,7 +133,7 @@ namespace KorisnickiInterfejs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 812);
+            this.ClientSize = new System.Drawing.Size(817, 565);
             this.Controls.Add(this.tbClan);
             this.Controls.Add(this.btnRazduziIgricu);
             this.Controls.Add(this.btnRazduziSve);
@@ -145,6 +145,7 @@ namespace KorisnickiInterfejs
             this.Controls.Add(this.lblDatumZaduzenja);
             this.Controls.Add(this.lblZaduzenjeID);
             this.Name = "FrmDetaljiZaduzenja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled zaduženja";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviPrimerci)).EndInit();
             this.ResumeLayout(false);

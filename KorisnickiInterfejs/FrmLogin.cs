@@ -67,7 +67,7 @@ namespace KorisnickiInterfejs
                 KorisnickaSifra = password,
             };
 
-            user = Kontroler.Instance.Login(user);
+            user = Kontroler.Instance.NadjiKorisnika(user);
 
             if (user != null)
             {

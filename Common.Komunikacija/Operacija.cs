@@ -8,24 +8,24 @@ namespace Common.Komunikacija
 {
     public enum Operacija
     {
-        Login,
+        NadjiKorisnika,
         Kraj,
-        KreirajClana,
+        ZapamtiClana,
         PretraziClanove,
         VratiClanove,
-        VratiZaduzenjaClana,
+        PretraziZaduzenja, //VratiZaduzenjaClana
         IzmeniClana,
         ObrisiClana,
-        EvidentirajClanarinu,
+        ZapamtiClanarinu,
         IzbrisiClanarinu,
         VratiClanarine,
         PretraziIgrice,
         VratiIgrice,
         PretraziPrimerke,
-        KreirajZaduzenje,
+        ZapamtiZaduzenje,
         VratiZaduzenja,
         VratiPrimerkeZaduzenja,
-        RazduziZaduzenje //izmena zaduzenja
+        IzmeniZaduzenje //izmena zaduzenja
 
     }
 }

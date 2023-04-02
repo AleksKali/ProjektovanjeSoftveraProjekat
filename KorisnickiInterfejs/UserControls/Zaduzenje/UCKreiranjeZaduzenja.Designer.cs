@@ -51,7 +51,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // btnSacuvajZaduzenje
             // 
             this.btnSacuvajZaduzenje.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacuvajZaduzenje.Location = new System.Drawing.Point(295, 551);
+            this.btnSacuvajZaduzenje.Location = new System.Drawing.Point(295, 611);
             this.btnSacuvajZaduzenje.Name = "btnSacuvajZaduzenje";
             this.btnSacuvajZaduzenje.Size = new System.Drawing.Size(88, 34);
             this.btnSacuvajZaduzenje.TabIndex = 8;
@@ -66,7 +66,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.gbIgrica.Controls.Add(this.lblPrimerak);
             this.gbIgrica.Controls.Add(this.lblIgrica);
             this.gbIgrica.Controls.Add(this.btnSacuvajIgricu);
-            this.gbIgrica.Location = new System.Drawing.Point(104, 96);
+            this.gbIgrica.Location = new System.Drawing.Point(104, 156);
             this.gbIgrica.Name = "gbIgrica";
             this.gbIgrica.Size = new System.Drawing.Size(446, 252);
             this.gbIgrica.TabIndex = 14;
@@ -120,7 +120,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // 
             this.lblClan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblClan.AutoSize = true;
-            this.lblClan.Location = new System.Drawing.Point(109, 40);
+            this.lblClan.Location = new System.Drawing.Point(109, 100);
             this.lblClan.Name = "lblClan";
             this.lblClan.Size = new System.Drawing.Size(92, 17);
             this.lblClan.TabIndex = 11;
@@ -130,7 +130,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // 
             this.cbClan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbClan.FormattingEnabled = true;
-            this.cbClan.Location = new System.Drawing.Point(262, 40);
+            this.cbClan.Location = new System.Drawing.Point(262, 100);
             this.cbClan.Name = "cbClan";
             this.cbClan.Size = new System.Drawing.Size(242, 24);
             this.cbClan.TabIndex = 10;
@@ -141,7 +141,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(81, 150);
+            this.lblError.Location = new System.Drawing.Point(81, 210);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 17);
@@ -150,7 +150,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // btnIzbrisiRed
             // 
             this.btnIzbrisiRed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIzbrisiRed.Location = new System.Drawing.Point(558, 383);
+            this.btnIzbrisiRed.Location = new System.Drawing.Point(558, 443);
             this.btnIzbrisiRed.Margin = new System.Windows.Forms.Padding(4);
             this.btnIzbrisiRed.Name = "btnIzbrisiRed";
             this.btnIzbrisiRed.Size = new System.Drawing.Size(99, 29);
@@ -162,7 +162,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // 
             this.dgvPrimerci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPrimerci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrimerci.Location = new System.Drawing.Point(104, 359);
+            this.dgvPrimerci.Location = new System.Drawing.Point(104, 419);
             this.dgvPrimerci.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPrimerci.Name = "dgvPrimerci";
             this.dgvPrimerci.RowHeadersWidth = 51;
@@ -172,7 +172,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
             // lblGreska
             // 
             this.lblGreska.AutoSize = true;
-            this.lblGreska.Location = new System.Drawing.Point(81, 560);
+            this.lblGreska.Location = new System.Drawing.Point(81, 620);
             this.lblGreska.Name = "lblGreska";
             this.lblGreska.Size = new System.Drawing.Size(0, 17);
             this.lblGreska.TabIndex = 19;

@@ -88,7 +88,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             zaduzenje.Korisnik = SessionData.Instance.Korisnik;
             zaduzenje.Primerci = primerci.ToList();
 
-            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.KreirajZaduzenje, zaduzenje);
+            Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.ZapamtiZaduzenje, zaduzenje);
             
             primerci.Clear();
             uc.DgvPrimerci.DataSource = primerci;
@@ -111,7 +111,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             primerak.Igrica = (Igrica)uc.CbIgrica.SelectedItem;
             if (primerci.Contains(primerak))
             {
-                MessageBox.Show("Primerak vec postoji u listi");
+                MessageBox.Show("Primerak već postoji u listi.");
                 return;
             }
             primerci.Add(primerak);
@@ -125,7 +125,7 @@ namespace KorisnickiInterfejs.KontrolerKI
 
             if (primerci.Count == 0)
             {
-                uc.LblGreska.Text = "Ne mozete sacuvati zaduzenje bez unetih primeraka!";
+                uc.LblGreska.Text = "Ne možete sačuvati zaduženje bez unetih primeraka!";
                 uspesno = false;
             }
             else

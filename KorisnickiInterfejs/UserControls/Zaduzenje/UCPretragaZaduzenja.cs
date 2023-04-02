@@ -36,7 +36,7 @@ namespace KorisnickiInterfejs.UserControls.Zaduzenje
         {
             Clan c = new Clan();
             c.ClanskiBroj = int.Parse(tbClanskiBroj.Text);
-            zaduzenja = new BindingList<ZaduzenjePrimerak>(Kontroler.Instance.VratiZaduzenjaClana(c));
+            zaduzenja = new BindingList<ZaduzenjePrimerak>(Kontroler.Instance.PretraziZaduzenja(c));
             dgvZaduzenja.DataSource = zaduzenja;
         }
 

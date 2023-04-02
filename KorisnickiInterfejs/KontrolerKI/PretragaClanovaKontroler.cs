@@ -4,6 +4,7 @@ using KorisnickiInterfejs.ServerKomunikacija;
 using KorisnickiInterfejs.UserControls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace KorisnickiInterfejs.KontrolerKI
         private FrmDetaljiClana dijalog;
         private FrmDetaljiZaduzenja dijalogZaduzenje;
         private List<ZaduzenjePrimerak> trenutnaZaduzenja = new List<ZaduzenjePrimerak>();
+        private BindingList<Clan> clanovi = new BindingList<Clan>();
+
 
         public PretragaClanovaKontroler(UCPretragaClanova ucPretraga)
         {
@@ -30,7 +33,8 @@ namespace KorisnickiInterfejs.KontrolerKI
         {
             try
             {
-            uc.DgvClanPretraga.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove);
+            clanovi= new BindingList<Clan>(Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove));
+            uc.DgvClanPretraga.DataSource = clanovi;
             uc.BtnObrisiClana.Click += BtnObrisiClana_Click;
             uc.BtnDetalji.Click += BtnDetalji_Click;
             uc.TbImeClana.TextChanged += TbImeClana_TextChanged;
@@ -87,7 +91,7 @@ namespace KorisnickiInterfejs.KontrolerKI
            
             try
             {
-                trenutnaZaduzenja = Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.VratiZaduzenjaClana, zp);
+                trenutnaZaduzenja = Komunikacija.Instance.SendRequestGetResult<List<ZaduzenjePrimerak>>(Common.Komunikacija.Operacija.PretraziZaduzenja, zp);
                 dijalog.DgvTrenutnaZaduzenja.DataSource = trenutnaZaduzenja;
 
                 if (trenutnaZaduzenja.Count == 0)
@@ -122,8 +126,8 @@ namespace KorisnickiInterfejs.KontrolerKI
                     MessageBox.Show("Sistem je zapamtio člana.");
                 }
                 dijalog.Dispose();
-
-                uc.DgvClanPretraga.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove);
+                clanovi = new BindingList<Clan>(Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove));
+                uc.DgvClanPretraga.DataSource = clanovi;
 
             }
             catch (Exception ex)
@@ -215,7 +219,8 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
             izabranClan = (Clan)uc.DgvClanPretraga.SelectedRows[0].DataBoundItem;
             Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.ObrisiClana, izabranClan);
-            uc.DgvClanPretraga.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clan>>(Common.Komunikacija.Operacija.VratiClanove);
+            clanovi.Remove(izabranClan);
+            uc.DgvClanPretraga.DataSource = clanovi; 
             MessageBox.Show("Sistem je obrisao člana.");
 
             }

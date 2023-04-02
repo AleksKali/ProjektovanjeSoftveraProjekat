@@ -38,7 +38,7 @@ namespace KorisnickiInterfejs
         {
             try
             {
-                dgvTrenutnaZaduzenja.DataSource = Kontroler.Instance.VratiZaduzenjaClana(c.ClanskiBroj);
+                dgvTrenutnaZaduzenja.DataSource = Kontroler.Instance.PretraziZaduzenja(c.ClanskiBroj);
                 dgvTrenutnaZaduzenja.ReadOnly = true;
                 dgvTrenutnaZaduzenja.Columns[1].Visible = false;
 

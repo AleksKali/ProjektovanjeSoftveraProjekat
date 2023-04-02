@@ -20,12 +20,12 @@ namespace KorisnickiInterfejs.KontrolerKI
         {
             string username = frmLogin.TxtKorisnickoIme.Text;
             string password = frmLogin.TxtLozinka.Text;
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+
+            if (!ValidacijaKorisnika(frmLogin))
             {
-                frmLogin.TxtKorisnickoIme.BackColor = Color.Salmon;
-                frmLogin.TxtLozinka.BackColor = Color.Salmon;
                 return;
             }
+            
             try
             {
                 Korisnik user = new Korisnik()
@@ -36,16 +36,13 @@ namespace KorisnickiInterfejs.KontrolerKI
 
                 Komunikacija.Instance.Connect(); 
 
-                SessionData.Instance.Korisnik = Komunikacija.Instance.SendRequestGetResult<Korisnik>(Common.Komunikacija.Operacija.Login, user);
+                SessionData.Instance.Korisnik = Komunikacija.Instance.SendRequestGetResult<Korisnik>(Common.Komunikacija.Operacija.NadjiKorisnika, user);
                 if (SessionData.Instance.Korisnik != null)
                 {
                     MessageBox.Show($"Dobrodosao, {SessionData.Instance.Korisnik.Ime} {SessionData.Instance.Korisnik.Prezime}!");
                     frmLogin.DialogResult = DialogResult.OK;
                 }
-                else
-                {
-                    MessageBox.Show("Korisnik ne postoji u bazi.");
-                }
+                
             }
             catch (SystemOperationException ex)
             {
@@ -55,6 +52,31 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
                 MessageBox.Show("Greska pri radu sa serverom!");
             }
+        }
+
+        private bool ValidacijaKorisnika(FrmLogin frmLogin)
+        {
+            bool valid = true;
+
+            if (string.IsNullOrEmpty(frmLogin.TxtKorisnickoIme.Text))
+            {
+                frmLogin.TxtKorisnickoIme.BackColor = Color.Salmon;
+                valid = false;
+            }
+            else
+            {
+                frmLogin.TxtKorisnickoIme.BackColor = Color.White;
+            }
+            if (string.IsNullOrEmpty(frmLogin.TxtLozinka.Text))
+            {
+                frmLogin.TxtLozinka.BackColor = Color.Salmon;
+                valid = false;
+            }
+            else
+            {
+                frmLogin.TxtLozinka.BackColor = Color.White;
+            }
+            return valid;
         }
     }
 }

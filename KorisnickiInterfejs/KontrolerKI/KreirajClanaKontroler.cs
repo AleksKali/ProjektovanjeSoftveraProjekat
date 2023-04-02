@@ -47,7 +47,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             
             try
             {
-            int id = Komunikacija.Instance.SendRequestGetResult<List<int>>(Common.Komunikacija.Operacija.KreirajClana, clan)[0];
+            int id = Komunikacija.Instance.SendRequestGetResult<List<int>>(Common.Komunikacija.Operacija.ZapamtiClana, clan)[0];
 
                 MessageBox.Show("Sistem je zapamtio člana " + clan.Ime + " " + clan.Prezime + " sa članskim brojem: " + id);
 

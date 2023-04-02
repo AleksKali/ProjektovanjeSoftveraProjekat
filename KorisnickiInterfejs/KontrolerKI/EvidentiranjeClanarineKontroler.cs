@@ -3,6 +3,7 @@ using KorisnickiInterfejs.ServerKomunikacija;
 using KorisnickiInterfejs.UserControls.Clanarina;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace KorisnickiInterfejs.KontrolerKI
     public class EvidentiranjeClanarineKontroler
     {
         UCEvidentiranjeClanarine uc;
-        List<Clanarina> clanarine;
+        List<Clanarina> clanarine = new List<Clanarina>();
 
         public EvidentiranjeClanarineKontroler(UCEvidentiranjeClanarine uc)
         {
@@ -26,7 +27,6 @@ namespace KorisnickiInterfejs.KontrolerKI
             uc.BtnSacuvaj.Click += BtnSacuvaj_Click;
             try
             {
-              //  uc.DgvClanarine.DataSource = null; //posto nekad nece da nam radi binding list
                 clanarine = Komunikacija.Instance.SendRequestGetResult<List<Clanarina>>(Common.Komunikacija.Operacija.VratiClanarine);
 
                 uc.DgvClanarine.DataSource = clanarine;
@@ -76,9 +76,10 @@ namespace KorisnickiInterfejs.KontrolerKI
                             try
                             {
                                 Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzbrisiClanarinu, cl);
-                                Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.EvidentirajClanarinu, c);
+                                Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.ZapamtiClanarinu, c);
 
-                                MessageBox.Show("Sistem je zapamtio novu članarinu!");
+
+                                MessageBox.Show("Sistem je zapamtio članarinu!");
                             }
                             catch (Exception ex)
                             {
@@ -96,8 +97,9 @@ namespace KorisnickiInterfejs.KontrolerKI
                 try
                 {
 
-                    Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.EvidentirajClanarinu, c);
-                    MessageBox.Show("Sistem je zapamtio novu članarinu!");
+                    Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.ZapamtiClanarinu, c);
+               
+                    MessageBox.Show("Sistem je zapamtio članarinu!");
                 }
                 catch (Exception ex)
                 {
@@ -106,7 +108,8 @@ namespace KorisnickiInterfejs.KontrolerKI
                 }
             }
 
-            uc.DgvClanarine.DataSource = Komunikacija.Instance.SendRequestGetResult<List<Clanarina>>(Common.Komunikacija.Operacija.VratiClanarine);
+            clanarine = Komunikacija.Instance.SendRequestGetResult<List<Clanarina>>(Common.Komunikacija.Operacija.VratiClanarine);
+            uc.DgvClanarine.DataSource = clanarine;
         }
 
        

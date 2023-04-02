@@ -32,6 +32,8 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpDatumDo = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
             this.cbIzborClana = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSacuvaj = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.label2 = new System.Windows.Forms.Label();
             this.dgvClanarine = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
-            this.dtpDatumDo = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanarine)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.groupBox1.Controls.Add(this.btnSacuvaj);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(27, 275);
+            this.groupBox1.Location = new System.Drawing.Point(186, 307);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -62,6 +62,20 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Evidentiranje nove članarine";
+            // 
+            // dtpDatumDo
+            // 
+            this.dtpDatumDo.Location = new System.Drawing.Point(133, 148);
+            this.dtpDatumDo.Name = "dtpDatumDo";
+            this.dtpDatumDo.Size = new System.Drawing.Size(266, 22);
+            this.dtpDatumDo.TabIndex = 8;
+            // 
+            // dtpDatumOd
+            // 
+            this.dtpDatumOd.Location = new System.Drawing.Point(132, 103);
+            this.dtpDatumOd.Name = "dtpDatumOd";
+            this.dtpDatumOd.Size = new System.Drawing.Size(266, 22);
+            this.dtpDatumOd.TabIndex = 7;
             // 
             // cbIzborClana
             // 
@@ -115,7 +129,7 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             // dgvClanarine
             // 
             this.dgvClanarine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClanarine.Location = new System.Drawing.Point(27, 56);
+            this.dgvClanarine.Location = new System.Drawing.Point(186, 88);
             this.dgvClanarine.Margin = new System.Windows.Forms.Padding(4);
             this.dgvClanarine.Name = "dgvClanarine";
             this.dgvClanarine.RowHeadersWidth = 51;
@@ -125,26 +139,12 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 11);
+            this.label1.Location = new System.Drawing.Point(182, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Sve članarine:";
-            // 
-            // dtpDatumOd
-            // 
-            this.dtpDatumOd.Location = new System.Drawing.Point(132, 103);
-            this.dtpDatumOd.Name = "dtpDatumOd";
-            this.dtpDatumOd.Size = new System.Drawing.Size(266, 22);
-            this.dtpDatumOd.TabIndex = 7;
-            // 
-            // dtpDatumDo
-            // 
-            this.dtpDatumDo.Location = new System.Drawing.Point(133, 148);
-            this.dtpDatumDo.Name = "dtpDatumDo";
-            this.dtpDatumDo.Size = new System.Drawing.Size(266, 22);
-            this.dtpDatumDo.TabIndex = 8;
             // 
             // UCEvidentiranjeClanarine
             // 
@@ -154,7 +154,7 @@ namespace KorisnickiInterfejs.UserControls.Clanarina
             this.Controls.Add(this.dgvClanarine);
             this.Controls.Add(this.label1);
             this.Name = "UCEvidentiranjeClanarine";
-            this.Size = new System.Drawing.Size(663, 532);
+            this.Size = new System.Drawing.Size(905, 613);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanarine)).EndInit();

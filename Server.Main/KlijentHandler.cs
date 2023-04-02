@@ -55,12 +55,12 @@ namespace Server.Main
             {
                 switch (zahtev.Operacija)
                 {
-                    case Operacija.Login:
+                    case Operacija.NadjiKorisnika:
                         odgovor.Rezultat = Kontroler.Instance.Login((Korisnik)zahtev.ZahtevaniObjekat);
                         if (odgovor.Rezultat == null)
                         {
                             odgovor.Uspesno = false;
-                            odgovor.Poruka = "Korisnik ne postoji!";
+                            odgovor.Poruka = "Korisnik sa unetim kredencijalima ne postoji!";
                         }
                         break;
                     case Operacija.VratiClanove:
@@ -78,37 +78,37 @@ namespace Server.Main
                     case Operacija.ObrisiClana:
                         Kontroler.Instance.ObrisiClana((Clan)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.KreirajClana:
+                    case Operacija.ZapamtiClana:
                         odgovor.Rezultat = new List<int>() { Kontroler.Instance.DodajClana((Clan)zahtev.ZahtevaniObjekat) };
                         break;
                     case Operacija.PretraziClanove:
                         odgovor.Rezultat = Kontroler.Instance.PretraziClanove(((Clan)zahtev.ZahtevaniObjekat));
                         break;
-                    case Operacija.IzmeniClana:
+                    case Operacija.IzmeniClana: 
                         Kontroler.Instance.IzmeniClana((Clan)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.VratiZaduzenjaClana:
+                    case Operacija.PretraziZaduzenja:
                         odgovor.Rezultat = Kontroler.Instance.VratiZaduzenjaClana((ZaduzenjePrimerak)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.IzbrisiClanarinu:
+                    case Operacija.IzbrisiClanarinu: 
                         Kontroler.Instance.IzbrisiClanarinu((Clanarina)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.EvidentirajClanarinu:
+                    case Operacija.ZapamtiClanarinu:
                         Kontroler.Instance.EvidentirajClanarinu((Clanarina)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.KreirajZaduzenje:
+                    case Operacija.ZapamtiZaduzenje:
                         Kontroler.Instance.SacuvajZaduzenje((Zaduzenje)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.PretraziPrimerke:
+                    case Operacija.PretraziPrimerke: 
                         odgovor.Rezultat = Kontroler.Instance.VratiPrimerke((Primerak)zahtev.ZahtevaniObjekat);
                         break;
-                    case Operacija.VratiPrimerkeZaduzenja:
+                    case Operacija.VratiPrimerkeZaduzenja: 
                         odgovor.Rezultat = Kontroler.Instance.VratiPrimerkeZaduzenja((ZaduzenjePrimerak)zahtev.ZahtevaniObjekat); 
                         break;
                     case Operacija.VratiZaduzenja:
                         odgovor.Rezultat = Kontroler.Instance.VratiZaduzenja(); 
                         break;
-                    case Operacija.RazduziZaduzenje:
+                    case Operacija.IzmeniZaduzenje:
                         Kontroler.Instance.Razduzi((Zaduzenje)zahtev.ZahtevaniObjekat); 
                         break;
                     case Operacija.Kraj:

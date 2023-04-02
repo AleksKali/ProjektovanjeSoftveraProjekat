@@ -37,7 +37,6 @@ namespace KorisnickiInterfejs.KontrolerKI
             uc.BtnSacuvajZaduzenje.Click += BtnSacuvajZaduzenje_Click;
             uc.CbIgrica.SelectedIndexChanged += CbIgrica_SelectedIndexChanged;
             uc.BtnIzbrisiRed.Click += BtnIzbrisiRed_Click;
-
             }
             catch (Exception ex)
             {
@@ -93,8 +92,10 @@ namespace KorisnickiInterfejs.KontrolerKI
             
             primerci.Clear();
             uc.DgvPrimerci.DataSource = primerci;
+            uc.CbPrimerak.DataSource = null;
 
             MessageBox.Show("Sistem je zapamtio zaduženje.");
+            
             }
             catch (Exception ex)
             {

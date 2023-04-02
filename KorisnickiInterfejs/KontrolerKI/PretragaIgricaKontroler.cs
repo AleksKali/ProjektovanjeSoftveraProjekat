@@ -50,7 +50,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne može da nađe igrice po zadatim vrednostima.");
+                MessageBox.Show("Sistem ne može da nađe igrice po zadatoj vrednosti.");
                 Debug.WriteLine(">>> " + ex.Message);
             }
         }

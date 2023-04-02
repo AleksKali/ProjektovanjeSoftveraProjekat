@@ -57,7 +57,7 @@ namespace KorisnickiInterfejs.KontrolerKI
                 izabranClan.Ulica = dijalog.TbUlica.Text;
                 izabranClan.BrojUlice = dijalog.TbBroj.Text;
 
-                Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzmeniClana, izabranClan); //moramo da ga obavestimo da je uspesna izmena i da zatvorimo formu za detalje?
+                Komunikacija.Instance.SendRequestNoResult(Common.Komunikacija.Operacija.IzmeniClana, izabranClan); 
                 dijalog.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
@@ -222,7 +222,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             catch (SystemOperationException ex)
             {
 
-                MessageBox.Show("Zabranjeno brisanje člana koji ima zaduženje.");
+                MessageBox.Show("Sistem ne može da obriše člana koji ima zaduženje.");
                 Debug.WriteLine(">>> " + ex.Message);
             }
             catch (Exception ex)

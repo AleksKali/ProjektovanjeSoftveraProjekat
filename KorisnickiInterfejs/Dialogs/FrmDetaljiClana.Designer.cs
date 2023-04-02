@@ -330,7 +330,7 @@ namespace KorisnickiInterfejs
             this.Controls.Add(this.lblClanskiBroj);
             this.Name = "FrmDetaljiClana";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDetaljiClana";
+            this.Text = "Pregled člana";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrenutnaZaduzenja)).EndInit();
             this.gbUnosClana.ResumeLayout(false);
             this.gbUnosClana.PerformLayout();

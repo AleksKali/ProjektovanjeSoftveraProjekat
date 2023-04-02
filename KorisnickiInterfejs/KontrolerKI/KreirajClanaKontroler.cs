@@ -49,9 +49,10 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
             int id = Komunikacija.Instance.SendRequestGetResult<List<int>>(Common.Komunikacija.Operacija.KreirajClana, clan)[0];
 
-            MessageBox.Show("Uspešno ste kreirali člana " + clan.Ime + " " + clan.Prezime + " sa članskim brojem: " + id);
+                MessageBox.Show("Sistem je zapamtio člana " + clan.Ime + " " + clan.Prezime + " sa članskim brojem: " + id);
 
-            foreach (Control control in uc.GbDodajClana.Controls)
+
+                foreach (Control control in uc.GbDodajClana.Controls)
             {
                 if (control is TextBox)
                 {
@@ -104,7 +105,7 @@ namespace KorisnickiInterfejs.KontrolerKI
             {
                 uc.TbPrezime.BackColor = Color.White;
             }
-            if (string.IsNullOrEmpty(uc.TbJMBG.Text) || !int.TryParse(uc.TbJMBG.Text, out _))
+            if (string.IsNullOrEmpty(uc.TbJMBG.Text))
             {
                 uc.TbJMBG.BackColor = Color.Salmon;
                 valid = false;

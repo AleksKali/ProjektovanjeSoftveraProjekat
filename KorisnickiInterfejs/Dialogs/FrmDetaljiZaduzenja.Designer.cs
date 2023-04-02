@@ -145,7 +145,7 @@ namespace KorisnickiInterfejs
             this.Controls.Add(this.lblDatumZaduzenja);
             this.Controls.Add(this.lblZaduzenjeID);
             this.Name = "FrmDetaljiZaduzenja";
-            this.Text = "FrmDetaljiZaduzenja";
+            this.Text = "Pregled zaduženja";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviPrimerci)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

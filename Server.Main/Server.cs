@@ -70,7 +70,6 @@ namespace Server.Main
             {
                 handler.CloseSocket(); 
             }
-            //clients.Clear();
         }
     }
 }

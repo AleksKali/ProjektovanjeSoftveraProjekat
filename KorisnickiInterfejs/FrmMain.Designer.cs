@@ -39,8 +39,8 @@ namespace KorisnickiInterfejs
             this.pretragaZaduženjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kreiranjeNovogZaduženjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.članarineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.igriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,19 +111,19 @@ namespace KorisnickiInterfejs
             this.članarineToolStripMenuItem.Text = "Članarine";
             this.članarineToolStripMenuItem.Click += new System.EventHandler(this.članarineToolStripMenuItem_Click);
             // 
-            // pnlMain
-            // 
-            this.pnlMain.Location = new System.Drawing.Point(0, 31);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1006, 697);
-            this.pnlMain.TabIndex = 2;
-            // 
             // igriceToolStripMenuItem
             // 
             this.igriceToolStripMenuItem.Name = "igriceToolStripMenuItem";
             this.igriceToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.igriceToolStripMenuItem.Text = "Igrice";
             this.igriceToolStripMenuItem.Click += new System.EventHandler(this.igriceToolStripMenuItem_Click);
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Location = new System.Drawing.Point(0, 31);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1006, 697);
+            this.pnlMain.TabIndex = 2;
             // 
             // FrmMain
             // 
@@ -134,6 +134,7 @@ namespace KorisnickiInterfejs
             this.Controls.Add(this.menuStrip1);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

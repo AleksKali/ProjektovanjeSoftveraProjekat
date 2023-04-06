@@ -1,4 +1,5 @@
-﻿using KorisnickiInterfejs.UserControls;
+﻿using KorisnickiInterfejs.ServerKomunikacija;
+using KorisnickiInterfejs.UserControls;
 using KorisnickiInterfejs.UserControls.Clanarina;
 using KorisnickiInterfejs.UserControls.Igrice;
 using KorisnickiInterfejs.UserControls.Zaduzenje;
@@ -6,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +65,18 @@ namespace KorisnickiInterfejs
             ChangePanel(new UCPretragaIgrica());
            
 
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Komunikacija.Instance.Close();
+            }
+            catch (IOException ex)
+            {
+                Debug.WriteLine(">>>>> FormClosed event >>>>>" + ex.Message);
+            }
         }
     }
     
